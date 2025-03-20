@@ -1,0 +1,15 @@
+﻿using Game.Scripts.Gameplay.Shared.Item.Pick;
+
+namespace Game.Scripts.Gameplay.MatchLostSoul.Item.Pick.LostSoul
+{
+    /// <summary><see cref="PickableItem"/> subclass.</summary>
+    public class LostSoulPickableItem : PickableItem
+    {
+        
+        
+        public override bool CanBePicked<T>(ItemPickerS<T> itemPickerS)
+        {
+            return true;
+        }
+    }
+}

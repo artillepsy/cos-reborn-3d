@@ -1,0 +1,91 @@
+using System;
+using System.Linq;
+using Game.Scripts.Gameplay.Configs.Match.Skills;
+using Game.Scripts.Gameplay.MatchLostSoul.Context;
+using Game.Scripts.Gameplay.Shared.Util;
+using Game.Scripts.Gameplay.Shared.Util.SerializableDataStructure;
+using UnityEngine;
+
+namespace Game.Scripts.Gameplay.Shared.Skills.Teleport
+{
+/// <summary> Teleports player to a desired location, restricted by colliders and max distance </summary>
+public class SkillTeleport : SkillBase
+{
+	private CapsuleCollider _playerColliderS;
+	
+	public override void InitServer(MatchContext context, ConfigSkill config, PlayerSkillsManager manager, int skillIndex)
+	{
+		base.InitServer(context, config, manager, skillIndex);
+		_playerColliderS = _tf.GetComponentsInChildren<CapsuleCollider>()
+		   .ToList().Find(c => !c.isTrigger);
+	}
+
+	public override void OnKeyPressC()
+	{
+		if (!IsReady)
+		{
+			return;
+		}
+		var mousePos = GetMouseCursorPosC();
+
+		var dto = new TeleportDto()
+		{
+			DesiredPos    = new Vector3Serializable(mousePos),
+			OwnerClientId = _manager.OwnerClientId,
+		};
+		var bytes = BinarySerializer.Serialize(dto);
+		
+		_manager.ReceiveSkillDtoC(SkillIndex, bytes);
+		StartCooldown();
+	}
+	
+	//---------------------------------------------------------------------------------------
+	//---------------------------------------------------------------------------------------
+	
+	public override void OnDtoReceivedServer(byte[] bytesDto)
+	{
+		StartCooldown();
+		var dto        = BinarySerializer.Deserialize<TeleportDto>(bytesDto);
+		var pos        = _tf.position;
+		var desiredPos = dto.DesiredPos.ToObject();
+
+		var config = ((ConfigSkillTeleport)Config);
+
+		var dist        = Mathf.Min(Vector3.Distance(pos, desiredPos), config.MaxDist);
+		var dir         = (desiredPos - pos).normalized;
+		var teleportPos = pos + dir * dist;
+
+		var results  = new RaycastHit[10];
+		int hitCount = Physics.RaycastNonAlloc(pos, teleportPos, results, dist);
+		
+		if (hitCount > 0)
+		{
+			foreach (var hit in results)
+			{
+				if (!hit.collider.isTrigger && hit.collider != _playerColliderS)
+				{
+					dist = hit.distance - _playerColliderS.radius;
+					break;
+				}
+			}
+		}
+		
+		teleportPos  = pos + dir * dist;
+		_tf.position = teleportPos;
+		Debug.DrawLine(pos + Vector3.up, teleportPos + Vector3.up, Color.green, 30f);
+	}
+
+	[Serializable]
+	public class TeleportDto
+	{
+		public Vector3Serializable DesiredPos;
+		public ulong               OwnerClientId;
+
+		public override string ToString()
+		{
+			return $"{nameof(DesiredPos)}: {DesiredPos}, " +
+			       $"{nameof(OwnerClientId)}: {OwnerClientId}";
+		}
+	}
+}
+}
