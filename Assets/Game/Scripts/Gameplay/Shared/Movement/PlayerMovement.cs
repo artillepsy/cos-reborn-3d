@@ -54,7 +54,7 @@ public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClie
 		}
 
 		var pos = transform.position;
-		_camTf.position = new Vector3(pos.x, pos.y, _camTf.position.z);
+		_camTf.position = new Vector3(pos.x, _camTf.position.y, pos.z);
 
 		if (Input.GetKeyDown(KeyCode.B))
 		{
