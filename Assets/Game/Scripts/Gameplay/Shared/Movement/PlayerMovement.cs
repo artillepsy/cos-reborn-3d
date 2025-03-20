@@ -9,7 +9,6 @@ namespace Game.Scripts.Gameplay.Shared.Movement
 {
 public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClient
 {
-	private Transform _camTf;
 	private Rigidbody _rb;
 
 	private NetworkTransform _netTransformC;
@@ -25,7 +24,6 @@ public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClie
 	public override void OnNetworkSpawn()
 	{
 		System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
-		_camTf = Camera.main.transform;
 		_rb    = GetComponent<Rigidbody>();
 	}
 
@@ -52,9 +50,6 @@ public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClie
 		{
 			return;
 		}
-
-		var pos = transform.position;
-		_camTf.position = new Vector3(pos.x, _camTf.position.y, pos.z);
 
 		if (Input.GetKeyDown(KeyCode.B))
 		{

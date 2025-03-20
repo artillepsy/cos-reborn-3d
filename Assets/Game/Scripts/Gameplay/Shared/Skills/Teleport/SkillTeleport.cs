@@ -3,6 +3,7 @@ using System.Linq;
 using Game.Scripts.Gameplay.Configs.Match.Skills;
 using Game.Scripts.Gameplay.MatchLostSoul.Context;
 using Game.Scripts.Gameplay.Shared.Util;
+using Game.Scripts.Gameplay.Shared.Util.Camera;
 using Game.Scripts.Gameplay.Shared.Util.SerializableDataStructure;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ public class SkillTeleport : SkillBase
 		{
 			return;
 		}
-		var mousePos = GetMouseCursorPosC();
+		var mousePos = CameraHelperC.GetMouseCursorWorldPos();
 
 		var dto = new TeleportDto()
 		{

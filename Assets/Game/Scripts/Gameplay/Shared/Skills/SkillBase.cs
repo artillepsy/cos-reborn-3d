@@ -1,4 +1,3 @@
-using System;
 using Game.Scripts.Gameplay.Configs.Match.Skills;
 using Game.Scripts.Gameplay.MatchLostSoul.Context;
 using UnityEngine;
@@ -10,9 +9,6 @@ public abstract class SkillBase : ISkillState
 {
 	protected PlayerSkillsManager _manager;
 	protected Transform           _tf;
-
-	protected Plane     _groundPlaneC;
-	protected Camera    _camC;
 
 	//---------------------------------------------------------------------------------------
 	//---------------------------------------------------------------------------------------
@@ -56,9 +52,6 @@ public abstract class SkillBase : ISkillState
 		_manager   = manager;
 		_tf        = _manager.transform;
 
-		_groundPlaneC = new Plane(Vector3.up, Vector3.zero);
-		_camC         = Camera.main;
-
 		CooldownMax = config.Cooldown;
 		StartCooldown();
 	}
@@ -97,19 +90,6 @@ public abstract class SkillBase : ISkillState
 	protected void StartCooldown()
 	{
 		CooldownCurr = CooldownMax;
-	}
-
-	protected Vector3 GetMouseCursorPosC()
-	{
-		var ray = _camC.ScreenPointToRay(Input.mousePosition);
-
-		if (_groundPlaneC.Raycast(ray, out var dist))
-		{
-			var hitPoint = ray.GetPoint(dist);
-			return hitPoint;
-		}
-
-		throw new Exception("There is no point for mouse cursor on the ground");
 	}
 	
 	//---------------------------------------------------------------------------------------

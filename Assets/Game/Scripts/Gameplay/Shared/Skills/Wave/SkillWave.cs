@@ -1,6 +1,7 @@
 using System;
 using Game.Scripts.Gameplay.Configs.Match.Skills;
 using Game.Scripts.Gameplay.Shared.Util;
+using Game.Scripts.Gameplay.Shared.Util.Camera;
 using Game.Scripts.Gameplay.Shared.Util.SerializableDataStructure;
 using UnityEngine;
 
@@ -15,7 +16,7 @@ public class SkillWave : SkillBase
 		{
 			return;
 		}
-		var mousePos = GetMouseCursorPosC();
+		var mousePos = CameraHelperC.GetMouseCursorWorldPos();
 		var pos      = _tf.position;
 		var dir      = (mousePos - pos).normalized;
 
