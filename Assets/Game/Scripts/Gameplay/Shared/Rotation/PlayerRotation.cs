@@ -15,6 +15,8 @@ public class PlayerRotation : NetworkBehaviour
 
 		var mousePos = CameraHelperC.GetMouseCursorWorldPos();
 		transform.LookAt(mousePos, Vector3.up);
+		
+		Debug.DrawRay(mousePos, Vector3.up * 3, Color.red);
 	}
 }
 }
