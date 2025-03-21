@@ -11,12 +11,10 @@ namespace Game.Scripts.Foyer.Network.WebSocket
 {
     public class StompWebSocket
     {
-
-        public delegate void StompMessageDelegate(StompMessage message);
         public event EventHandler OnSocketOpen;
         public event EventHandler OnSocketClose;    
-        public event StompMessageDelegate OnStompMessage;
-        public event StompMessageDelegate OnStompError;
+        public event Action<StompMessage> OnStompMessage;
+        public event Action<StompMessage> OnStompError;
 
         public static readonly StompWebSocket Instance;
 
