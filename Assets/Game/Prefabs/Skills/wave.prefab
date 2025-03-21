@@ -56,7 +56,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b50cb49ccdb08cf4884e900b2c995df7, type: 2}
+  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,15 +108,15 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.76470596, b: 0.35686275, a: 1}
-      key1: {r: 1, g: 0.76470596, b: 0.24313727, a: 0}
+      key0: {r: 0.6404743, g: 0, b: 1, a: 1}
+      key1: {r: 0.19948548, g: 1, b: 0.69210976, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 0
+      ctime0: 20755
       ctime1: 65535
       ctime2: 0
       ctime3: 0
@@ -198,8 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2216857816
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 2211303492
+  InScenePlacedSourceGlobalObjectIdHash: 2216857816
   DeferredDespawnTick: 0
   Ownership: 1
   AlwaysReplicateAsRoot: 0
