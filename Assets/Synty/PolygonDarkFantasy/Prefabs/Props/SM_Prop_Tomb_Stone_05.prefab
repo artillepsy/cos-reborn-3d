@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6783182064136430316}
   - component: {fileID: 7605858161457114441}
   - component: {fileID: 5650215409970370947}
-  - component: {fileID: 714654050}
   m_Layer: 0
   m_Name: SM_Prop_Tomb_Stone_05
   m_TagString: Untagged
@@ -88,28 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &714654050
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6154560912215210070}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -6864059043171173544, guid: 9e3372e4831a9bc46aa1258359444bd6, type: 2}
 --- !u!1001 &3516874998203960789
 PrefabInstance:
   m_ObjectHideFlags: 0

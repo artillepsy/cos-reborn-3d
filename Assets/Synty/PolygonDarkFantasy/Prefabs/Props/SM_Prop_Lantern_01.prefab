@@ -218,7 +218,6 @@ GameObject:
   - component: {fileID: 7310643214655392239}
   - component: {fileID: 5970441393152755274}
   - component: {fileID: 8448668898319430272}
-  - component: {fileID: 1456482984}
   m_Layer: 0
   m_Name: SM_Prop_Lantern_01
   m_TagString: Untagged
@@ -296,25 +295,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1456482984
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7944156132729672533}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6343258687970470077, guid: 957dfc46039ac2240af733f5aa6ef271, type: 2}

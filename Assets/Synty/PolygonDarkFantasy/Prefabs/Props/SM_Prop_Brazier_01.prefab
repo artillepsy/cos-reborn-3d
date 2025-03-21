@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 9178384880093446900}
   - component: {fileID: 5246684761535434065}
   - component: {fileID: 8010497152379173275}
-  - component: {fileID: 731934983}
+  - component: {fileID: 5154542411967303836}
   m_Layer: 0
   m_Name: SM_Prop_Brazier_01
   m_TagString: Untagged
@@ -209,8 +209,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &731934983
-MeshCollider:
+--- !u!136 &5154542411967303836
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -227,7 +227,8 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6682424995717467317, guid: caf189015d018974b8f3a8422cb6ef55, type: 2}
+  serializedVersion: 2
+  m_Radius: 0.3935973
+  m_Height: 1.0313703
+  m_Direction: 1
+  m_Center: {x: 0.00514549, y: 0.51568514, z: 0}
