@@ -23,7 +23,7 @@ public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClie
 
 	public override void OnNetworkSpawn()
 	{
-		System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
+		System.Diagnostics.Debug.Assert(UnityEngine.Camera.main != null, "Camera.main != null");
 		_rb    = GetComponent<Rigidbody>();
 	}
 

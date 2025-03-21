@@ -6,9 +6,6 @@ namespace Game.Scripts.Gameplay.Shared.Rotation
 {
 public class PlayerRotation : NetworkBehaviour
 {
-	//--------------------------------------------------------
-	//--------------------------------------------------------
-
 	private void Update()
 	{
 		if (!IsLocalPlayer)

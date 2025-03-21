@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8de88fdf0e7c420389d1ab49cbe91338, type: 3}
+  m_Name: c_skill_fireball
+  m_EditorClassIdentifier: 
+  Id: 0
+  IsInputHold: 0
+  Cooldown: 1.98
+  ProjectilePrefab: {fileID: 5263439505276341410, guid: 7df1cf9c39b7a0e4882767d94819adbf, type: 3}
+  Speed: 15

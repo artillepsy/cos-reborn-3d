@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aa4a7fb298042c4fa51086104f29771, type: 3}
+  m_Name: c_skill_wave
+  m_EditorClassIdentifier: 
+  Id: 3
+  IsInputHold: 0
+  Cooldown: 1.11
+  ProjectilePrefab: {fileID: 5263439505276341410, guid: 4626e8ef20ff9c343b4377af047c01ae, type: 3}
+  SpeedForward: 5
+  SpeedSideMin: 3
+  SpeedSideMax: 6
+  DirChangeDelayMin: 0.2
+  DirChangeDelayMax: 0.5
+  DirDelayGainMin: 0.2
+  DirDelayGainMax: 0.5
+  SideIntervalToSpeedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2.0187917
+      outSlope: 2.0187917
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 0.49807194
+      value: 1.0055035
+      inSlope: 0.0077548027
+      outSlope: 0.0077548027
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -2.003282
+      outSlope: -2.003282
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
