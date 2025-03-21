@@ -53,7 +53,7 @@ namespace Game.Scripts.Gameplay.Shared.Network
             var connectionData = request.Payload;
             var secret = System.Text.Encoding.ASCII.GetString(connectionData);
 
-            if (secret != CommandLineArgs.ArgsS.Secret && !string.IsNullOrEmpty(CommandLineArgs.ArgsS.Secret))
+            if (secret != CommandLineArgs.ArgsS?.Secret && !string.IsNullOrEmpty(CommandLineArgs.ArgsS?.Secret))
             {
                 response.Approved = false;
 
