@@ -21,7 +21,7 @@ MonoBehaviour:
   Groups:
   - IsReplaceable: 0
     Skills:
-    - {fileID: 11400000, guid: f54a46ab5abe6d947b678fe2300fc44f, type: 2}
+    - {fileID: 11400000, guid: ba4ec4d946e12324095914b28eb86468, type: 2}
   - IsReplaceable: 1
     Skills:
     - {fileID: 11400000, guid: a2b2862960d7d2843ae1ab05fcfbb9b4, type: 2}

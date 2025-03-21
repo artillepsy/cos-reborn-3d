@@ -6,6 +6,7 @@ namespace Game.Scripts.Gameplay.Shared.Util.Camera
 public static class CameraHelperC
 {
 	private static UnityEngine.Camera _cam;
+	private static Vector3            _mousePos;
 	
 	private static UnityEngine.Camera Cam
 	{
@@ -29,10 +30,10 @@ public static class CameraHelperC
 		if (_groundPlane.Raycast(ray, out var dist))
 		{
 			var hitPoint = ray.GetPoint(dist);
-			return hitPoint;
+			_mousePos = hitPoint;
 		}
-
-		throw new Exception("There is no point for mouse cursor on the ground");
+		
+		return _mousePos;
 	}
 }
 }

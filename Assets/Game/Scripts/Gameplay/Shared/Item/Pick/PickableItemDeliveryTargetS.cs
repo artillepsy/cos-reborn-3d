@@ -8,7 +8,7 @@ namespace Game.Scripts.Gameplay.Shared.Item.Pick
     {
 
         public event Action<ulong> EvItemDelivered;
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter(Collider other)
         {
             if (!IsServer)
             {

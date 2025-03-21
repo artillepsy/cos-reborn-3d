@@ -40,7 +40,7 @@ namespace Game.Scripts.Gameplay.Shared.Item.Pick
             _deliveryTargetS.EvItemDelivered -= InvokeEvItemAbsorbedEvent;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter(Collider other)
         {
             if (!IsServer)
             {

@@ -22,7 +22,7 @@ public class ProjectileFlowerChildS : ProjectileBaseS
 		_isRotDirRight    = isRotRight;
 		_randRotCurveLerp = Random.value;
 		
-		transform.up = dir.normalized;
+		transform.forward = dir.normalized;
 	}
 	
 	private void Update()
@@ -44,9 +44,9 @@ public class ProjectileFlowerChildS : ProjectileBaseS
 	private void HandleRotation()
 	{
 		var lifeTimeLerpVal = _lifeTimeCurr / _lifeTimeMax;
-		var rotAngleZ       = _config.Main.LifetimeRotationCurve.Evaluate(lifeTimeLerpVal, _randRotCurveLerp) * Time.deltaTime;
-		rotAngleZ = _isRotDirRight ? rotAngleZ : -rotAngleZ;
-		transform.Rotate(0f, 0f, rotAngleZ);
+		var rotAngleY       = _config.Main.LifetimeRotationCurve.Evaluate(lifeTimeLerpVal, _randRotCurveLerp) * Time.deltaTime;
+		rotAngleY = _isRotDirRight ? rotAngleY : -rotAngleY;
+		transform.Rotate(0f, rotAngleY, 0f );
 	}
 
 	private void HandleDestroyDelay()

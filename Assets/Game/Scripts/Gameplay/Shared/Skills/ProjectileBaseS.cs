@@ -44,7 +44,7 @@ public abstract class ProjectileBaseS : NetworkBehaviour
 	/// Is called when projectile hits something. Usually, it flies through other projectiles and kills the enemy player,
 	/// destroying itself. Override the method to implement additional behaviour 
 	/// </summary>
-	protected virtual void OnTriggerEnter2D(Collider2D other)
+	protected virtual void OnTriggerEnter(Collider other)
 	{
 		if (!IsServer)
 		{

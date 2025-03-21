@@ -29,7 +29,7 @@ public class ProjectileFlowerMainS : ProjectileBaseS
 		_isRotDirRight    = Random.value > 0.5f;
 		_randRotCurveLerp = Random.value;
 
-		transform.up = dir.normalized;
+		transform.forward = dir.normalized;
 		
 		_childSpawnCount = configSkill.Child.GetRandSpawnCount();
 
@@ -37,6 +37,8 @@ public class ProjectileFlowerMainS : ProjectileBaseS
 		{
 			_childrenSpawnTime.Add(configSkill.Child.GetRandSpawnDelay() + Time.time);
 		}
+		
+		Debug.DrawRay(transform.position + Vector3.up, transform.forward, Color.green, 30f);
 	}
 
 	private void Update()
@@ -82,7 +84,7 @@ public class ProjectileFlowerMainS : ProjectileBaseS
 
 	private void HandleMoveForward()
 	{
-		_rb.linearVelocity = transform.up * _config.Child.Speed;
+		_rb.linearVelocity = transform.forward * _config.Child.Speed;
 	}
 
 	private void HandleRotation()

@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: c_skill_wave
   m_EditorClassIdentifier: 
   Id: 3
-  IsInputHold: 0
   Cooldown: 1.11
   ProjectilePrefab: {fileID: 5263439505276341410, guid: 4626e8ef20ff9c343b4377af047c01ae, type: 3}
-  SpeedForward: 5
+  SpeedForward: 15
   SpeedSideMin: 3
   SpeedSideMax: 6
   DirChangeDelayMin: 0.2

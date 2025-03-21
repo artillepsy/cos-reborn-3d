@@ -10,7 +10,7 @@ namespace Game.Scripts.Gameplay.Shared.Item.Pick
         [SerializeField]
         protected T _itemPrefab;
         
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter(Collider other)
         {
             if (!IsServer)
             {
