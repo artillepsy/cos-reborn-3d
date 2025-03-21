@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using Game.Scripts.Foyer.Network.Dto.Lobby.Launch;
 using Game.Scripts.Foyer.Network.Service.Lobby;
 using Game.Scripts.Gameplay.Shared.Network;

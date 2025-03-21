@@ -1,11 +1,13 @@
 ﻿using System;
+using Game.Scripts.Shared.Logging;
 
 namespace Game.Scripts.Shared.AppStartup.CommandLine
 {
     public static class CommandLineArgs
     {
-        public static bool AsServer { get; private set; }
-        public static string Secret { get; private set; }
+        public const string Separator = "=";
+        public static bool AsServer => ArgsS != null;
+        public static ArgsS ArgsS { get; private set; }
 
         static CommandLineArgs()
         {
@@ -17,27 +19,27 @@ namespace Game.Scripts.Shared.AppStartup.CommandLine
             var args = Environment.GetCommandLineArgs();
             foreach (var arg in args)
             {
-                var nameValuePair = arg.Split("=");
+                var nameValuePair = arg.Split(Separator);
                 if (nameValuePair.Length != 2)
                 {
                     continue;
                 }
-
                 try
                 {
                     switch (nameValuePair[0])
                     {
                         case "as-server":
-                            AsServer = bool.Parse(nameValuePair[1]);
-                            break;
-                        case "secret":
-                            Secret = nameValuePair[1];
+                            var asServer = bool.Parse(nameValuePair[1]);
+                            if (asServer)
+                            {
+                                ArgsS = new ArgsS(args);
+                            }
                             break;
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
-                    // ignored
+                    Log.Err(nameof(CommandLineArgs), e.Message);
                 }
             }
         }
