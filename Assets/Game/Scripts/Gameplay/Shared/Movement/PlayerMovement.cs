@@ -1,3 +1,4 @@
+using System;
 using Game.Scripts.Gameplay.Configs.Match;
 using Game.Scripts.Gameplay.MatchLostSoul.Context;
 using Game.Scripts.Gameplay.Shared.Init;
@@ -17,9 +18,7 @@ public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClie
 	private float _speed;
 	//--------------------------------------------------------
 	//--------------------------------------------------------
-	private Vector3 _prevMoveDelta;
-
-	private bool _isBot;
+	private Vector3 _moveDelta;
 
 	public override void OnNetworkSpawn()
 	{
@@ -51,34 +50,27 @@ public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClie
 			return;
 		}
 
-		if (Input.GetKeyDown(KeyCode.B))
-		{
-			_isBot = !_isBot;
-		}
-		if (_isBot)
-		{
-			return;
-		}
+		_moveDelta = GetMoveInputDeltaС();
+	}
 
-		var moveDelta = GetMoveInputDeltaС();
-
-		if (_prevMoveDelta == moveDelta)
+	private void FixedUpdate()
+	{
+		if (!IsLocalPlayer)
 		{
 			return;
 		}
 		
 		if (IsOwner && _netTransformC.AuthorityMode == NetworkTransform.AuthorityModes.Owner)
 		{
-			var newVelocity = moveDelta;
+			var newVelocity = _moveDelta;
 			newVelocity        *= _speed;
 			newVelocity        =  Vector3.ClampMagnitude(newVelocity, _speed);
 			_rb.linearVelocity =  newVelocity;
 		}
 		else
 		{
-			UpdateServerRpc(moveDelta);
+			UpdateServerRpc(_moveDelta);
 		}
-		_prevMoveDelta = moveDelta;
 	}
 
 	private Vector3 GetMoveInputDeltaС()
@@ -102,6 +94,9 @@ public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClie
 		{
 			z -= 1f;
 		}
+
+		/*float x = Input.GetAxis("Horizontal");
+		float z = Input.GetAxis("Vertical");*/
 		return new Vector3(x, 0f, z);
 	}
 

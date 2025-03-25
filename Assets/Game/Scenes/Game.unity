@@ -2888,7 +2888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 327722577}
   - component: {fileID: 327722576}
-  - component: {fileID: 327722575}
+  - component: {fileID: 327722578}
   m_Layer: 0
   m_Name: cm_camera
   m_TagString: Untagged
@@ -2896,25 +2896,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &327722575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 327722573}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TrackerSettings:
-    BindingMode: 4
-    PositionDamping: {x: 0.25, y: 1, z: 0.25}
-    AngularDampingMode: 0
-    RotationDamping: {x: 1, y: 1, z: 1}
-    QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 9.09, z: -4.56}
 --- !u!114 &327722576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2935,11 +2916,11 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 1447100548}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
-    FieldOfView: 85.1
+    FieldOfView: 50
     OrthographicSize: 6.4
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -2967,12 +2948,31 @@ Transform:
   m_GameObject: {fileID: 327722573}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4646102, y: 0, z: 0, w: 0.88551533}
-  m_LocalPosition: {x: -5.08, y: 9.09, z: 27.25}
+  m_LocalPosition: {x: 12.951257, y: 14, z: -14.944855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 55.37, y: 0, z: 0}
+--- !u!114 &327722578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327722573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b617507da6d07e749b7efdb34e1173e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TrackerSettings:
+    BindingMode: 4
+    PositionDamping: {x: 0.2, y: 0, z: 0.2}
+    AngularDampingMode: 0
+    RotationDamping: {x: 1, y: 1, z: 1}
+    QuaternionDamping: 1
+  FollowOffset: {x: 0, y: 14, z: -11}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,7 +3034,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 85.1
+  field of view: 50
   orthographic: 0
   orthographic size: 6.4
   m_Depth: -1
@@ -3061,7 +3061,7 @@ Transform:
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
   m_LocalRotation: {x: 0.4646102, y: 0, z: 0, w: 0.88551533}
-  m_LocalPosition: {x: -5.08, y: 9.09, z: 27.25}
+  m_LocalPosition: {x: 12.951257, y: 14, z: -14.944855}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3128,7 +3128,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 2
+  UpdateMethod: 0
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
@@ -19642,7 +19642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PresetAsset: {fileID: 0}
   m_PresetReference:
-    rid: 2604777624826020633
+    rid: 2604777717837333301
   m_Scenario:
     rid: -2
   m_IsScenarioSettingsFolded: 0
@@ -19652,7 +19652,7 @@ MonoBehaviour:
     RefIds:
     - rid: -2
       type: {class: , ns: , asm: }
-    - rid: 2604777624826020633
+    - rid: 2604777717837333301
       type: {class: NetworkSimulatorPreset, ns: Unity.Multiplayer.Tools.NetworkSimulator.Runtime, asm: Unity.Multiplayer.Tools.NetworkSimulator.Runtime}
       data:
         <Name>k__BackingField: None

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Game.Scripts.Gameplay.Configs.Match;
 using Game.Scripts.Gameplay.Configs.Match.Skills;
@@ -35,6 +36,11 @@ public class MatchStartup : NetworkBehaviour
 	private MatchContext _context;
 
 	public MatchContext Context => _context;
+
+	private void Awake()
+	{
+		Application.targetFrameRate = 60;
+	}
 
 	private void Update()
 	{

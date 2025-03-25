@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: c_player
   m_EditorClassIdentifier: 
   HealthMax: 100
-  Speed: 5
+  Speed: 5.7
