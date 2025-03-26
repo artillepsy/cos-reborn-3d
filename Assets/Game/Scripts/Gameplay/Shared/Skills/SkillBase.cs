@@ -10,6 +10,7 @@ public abstract class SkillBase : ISkillState
 	protected PlayerSkillsManager _manager;
 	protected Transform           _tf;
 
+
 	//---------------------------------------------------------------------------------------
 	//---------------------------------------------------------------------------------------
 	public ConfigSkill Config { get; private set; }

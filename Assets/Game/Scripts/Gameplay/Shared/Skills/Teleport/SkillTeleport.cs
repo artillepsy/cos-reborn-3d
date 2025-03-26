@@ -5,6 +5,7 @@ using Game.Scripts.Gameplay.MatchLostSoul.Context;
 using Game.Scripts.Gameplay.Shared.Util;
 using Game.Scripts.Gameplay.Shared.Util.Camera;
 using Game.Scripts.Gameplay.Shared.Util.SerializableDataStructure;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace Game.Scripts.Gameplay.Shared.Skills.Teleport
@@ -13,12 +14,21 @@ namespace Game.Scripts.Gameplay.Shared.Skills.Teleport
 public class SkillTeleport : SkillBase
 {
 	private CapsuleCollider _playerColliderS;
-	
+	private Rigidbody       _rb;
+
+	public override void InitClient(MatchContext context, ConfigSkill config, PlayerSkillsManager manager, int skillIndex)
+	{
+		base.InitClient(context, config, manager, skillIndex);
+		_rb = _tf.GetComponent<Rigidbody>();
+	}
+
 	public override void InitServer(MatchContext context, ConfigSkill config, PlayerSkillsManager manager, int skillIndex)
 	{
 		base.InitServer(context, config, manager, skillIndex);
 		_playerColliderS = _tf.GetComponentsInChildren<CapsuleCollider>()
 		   .ToList().Find(c => !c.isTrigger);
+
+		_rb = _tf.GetComponent<Rigidbody>();
 	}
 
 	public override void OnKeyPressC()
@@ -28,7 +38,9 @@ public class SkillTeleport : SkillBase
 			return;
 		}
 		var mousePos = CameraHelperC.GetMouseCursorWorldPos();
-
+		
+		_rb.MovePosition(mousePos);
+		
 		var dto = new TeleportDto()
 		{
 			DesiredPos    = new Vector3Serializable(mousePos),
@@ -71,10 +83,11 @@ public class SkillTeleport : SkillBase
 			}
 		}
 		
-		teleportPos  = pos + dir * dist;
-		_tf.position = teleportPos;
+		teleportPos   = pos + dir * dist;
+		_rb.position = teleportPos; //rb's owner is player, so it won't work on the server side nor rpc methods would work (it's not networkBeh)
 		Debug.DrawLine(pos + Vector3.up, teleportPos + Vector3.up, Color.green, 30f);
 	}
+
 
 	[Serializable]
 	public class TeleportDto
