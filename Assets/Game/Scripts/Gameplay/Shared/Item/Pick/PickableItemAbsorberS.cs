@@ -2,7 +2,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Item.Pick
+namespace Gameplay.Shared.Item.Pick
 {
     /// <summary>
     /// Object that absorb <see cref="PickableItem"/> objects when their triggers colliders make collision.

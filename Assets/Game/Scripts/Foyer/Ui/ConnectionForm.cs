@@ -1,4 +1,4 @@
-﻿﻿using Game.Scripts.Gameplay.Shared.Network;
+﻿using Gameplay.Shared.Network;
 using TMPro;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using Debug = System.Diagnostics.Debug;
 
-namespace Game.Scripts.Foyer.Ui
+namespace Foyer.Ui
 {
     public class ConnectionForm : MonoBehaviour
     {

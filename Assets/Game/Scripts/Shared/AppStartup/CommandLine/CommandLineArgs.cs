@@ -1,7 +1,7 @@
 ﻿using System;
-using Game.Scripts.Shared.Logging;
+using Shared.Logging;
 
-namespace Game.Scripts.Shared.AppStartup.CommandLine
+namespace Shared.AppStartup.CommandLine
 {
     public static class CommandLineArgs
     {

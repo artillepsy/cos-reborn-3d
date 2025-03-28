@@ -1,8 +1,8 @@
-﻿using Game.Scripts.Foyer.Ui.Auth;
-using Game.Scripts.Foyer.Ui.Lobby;
+﻿using Foyer.Ui.Auth;
+using Foyer.Ui.Lobby;
 using UnityEngine;
 
-namespace Game.Scripts.Foyer.Ui
+namespace Foyer.Ui
 {
     public class StartMenu : MonoBehaviour
     {

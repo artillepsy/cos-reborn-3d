@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Foyer.Network.Http
+﻿namespace Foyer.Network.Http
 {
     public enum HttpMethod
     {

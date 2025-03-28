@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Util.SerializableDataStructure
+namespace Gameplay.Shared.Util.SerializableDataStructure
 {
 [Serializable]
 public class Vector3Serializable : ASerializable<Vector3>

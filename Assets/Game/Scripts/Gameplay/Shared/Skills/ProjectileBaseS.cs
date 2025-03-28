@@ -1,9 +1,9 @@
-using Game.Scripts.Gameplay.Shared.Health;
-using Game.Scripts.Shared.Logging;
+using Gameplay.Shared.Health;
+using Shared.Logging;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Skills
+namespace Gameplay.Shared.Skills
 {
 /// <summary> The base class is needed to check collisions between 2 projectiles. </summary>
 public abstract class ProjectileBaseS : NetworkBehaviour

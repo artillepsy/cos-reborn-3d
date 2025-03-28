@@ -1,6 +1,6 @@
-﻿using Game.Scripts.Gameplay.Shared.Spawn;
+﻿using Gameplay.Shared.Spawn;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Spawn.LostSoul
+namespace Gameplay.MatchLostSoul.Spawn.LostSoul
 {
     public class LostSoulSpawnableObject : SpawnableObject
     {

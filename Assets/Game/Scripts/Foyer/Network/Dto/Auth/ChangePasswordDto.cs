@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Foyer.Network.Dto.Auth
+﻿namespace Foyer.Network.Dto.Auth
 {
     public class ChangePasswordDto
     {

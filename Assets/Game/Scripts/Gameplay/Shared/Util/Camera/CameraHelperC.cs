@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Util.Camera
+namespace Gameplay.Shared.Util.Camera
 {
 public static class CameraHelperC
 {

@@ -1,4 +1,4 @@
-namespace Game.Scripts.Gameplay.Shared.Skills
+namespace Gameplay.Shared.Skills
 {
 public interface ISkillState
 {

@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Game.Scripts.Foyer.Network.Dto.Lobby;
-using Game.Scripts.Foyer.Network.Service.Lobby;
+using Foyer.Network.Dto.Lobby;
+using Foyer.Network.Service.Lobby;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Game.Scripts.Foyer.Ui.Lobby
+namespace Foyer.Ui.Lobby
 {
     public class LobbiesForm : MonoBehaviour
     {

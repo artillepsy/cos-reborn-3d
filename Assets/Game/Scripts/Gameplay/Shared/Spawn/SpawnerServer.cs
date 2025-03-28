@@ -1,7 +1,7 @@
 ﻿using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Spawn
+namespace Gameplay.Shared.Spawn
 {
     /// <summary>
     /// Spawns <see cref="SpawnableObject"/> object in some spawn point. The <see cref="SpawnPointResolver{T}"/> desides

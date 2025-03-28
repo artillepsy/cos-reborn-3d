@@ -1,9 +1,9 @@
 using Cinemachine;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
-using Game.Scripts.Gameplay.Shared.Init;
+using Gameplay.MatchLostSoul.Context;
+using Gameplay.Shared.Init;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Camera
+namespace Gameplay.Shared.Camera
 {
 public class PlayerCameraFollow : MonoBehaviour, IMatchInitClient
 {

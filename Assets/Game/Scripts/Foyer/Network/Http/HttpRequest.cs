@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace Game.Scripts.Foyer.Network.Http
+namespace Foyer.Network.Http
 {
     public class HttpRequest : IDisposable
     {

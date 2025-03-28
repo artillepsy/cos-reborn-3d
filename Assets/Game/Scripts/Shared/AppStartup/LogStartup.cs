@@ -1,8 +1,8 @@
-﻿using Game.Scripts.Shared.Logging;
-using Game.Scripts.Shared.Ui.Forms;
+﻿using Shared.Logging;
+using Shared.Ui.Forms;
 using UnityEngine;
 
-namespace Game.Scripts.Shared.AppStartup
+namespace Shared.AppStartup
 {
     public class LogStartup : MonoBehaviour
     {

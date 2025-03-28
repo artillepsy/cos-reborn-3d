@@ -1,9 +1,9 @@
-using Game.Scripts.Gameplay.MatchLostSoul;
-using Game.Scripts.Gameplay.Shared.Components;
+using Gameplay.MatchLostSoul;
+using Gameplay.Shared.Components;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Health
+namespace Gameplay.Shared.Health
 {
 // TODO add health calculation
 public class PlayerHealth : NetworkBehaviour

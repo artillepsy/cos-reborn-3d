@@ -2,18 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Game.Scripts.Foyer.Network.Dto.Lobby;
-using Game.Scripts.Foyer.Network.Dto.Lobby.Launch;
-using Game.Scripts.Foyer.Network.Service.Auth;
-using Game.Scripts.Foyer.Network.Service.Lobby;
-using Game.Scripts.Gameplay.Shared.Network;
-using Game.Scripts.Gameplay.Shared.Util;
-using Game.Scripts.Shared.Logging;
+using Foyer.Network.Dto.Lobby;
+using Foyer.Network.Dto.Lobby.Launch;
+using Foyer.Network.Service.Auth;
+using Foyer.Network.Service.Lobby;
+using Gameplay.Shared.Network;
+using Shared.Logging;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-namespace Game.Scripts.Foyer.Ui.Lobby
+namespace Foyer.Ui.Lobby
 {
     public class LobbyForm : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Components
+namespace Gameplay.Shared.Components
 {
 public class NonNetworkComponentsActivator : LocalComponentsActivator
 {

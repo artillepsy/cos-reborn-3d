@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using System.Linq;
-using Game.Scripts.Gameplay.Configs.Match.Skills;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
-using Game.Scripts.Gameplay.MatchLostSoul.Startup;
-using Game.Scripts.Gameplay.Shared.Init;
-using Game.Scripts.Gameplay.Shared.Skills;
-using Game.Scripts.Shared.Extensions;
-using Game.Scripts.Shared.Logging;
+using Gameplay.Configs.Match.Skills;
+using Gameplay.MatchLostSoul.Context;
+using Gameplay.MatchLostSoul.Startup;
+using Gameplay.Shared.Init;
+using Gameplay.Shared.Skills;
+using Shared.Extensions;
+using Shared.Logging;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Player
+namespace Gameplay.MatchLostSoul.Player
 {
 /// <summary>
 /// If there is more than one group of replaceable skills,

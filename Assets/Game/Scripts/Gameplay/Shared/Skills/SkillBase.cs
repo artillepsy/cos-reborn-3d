@@ -1,8 +1,8 @@
-using Game.Scripts.Gameplay.Configs.Match.Skills;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
+using Gameplay.Configs.Match.Skills;
+using Gameplay.MatchLostSoul.Context;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Skills
+namespace Gameplay.Shared.Skills
 {
 //todo: replace with Server postfix
 public abstract class SkillBase : ISkillState

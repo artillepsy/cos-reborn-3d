@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Configs.Match.Skills
+namespace Gameplay.Configs.Match.Skills
 {
 [CreateAssetMenu(menuName = "Configs/Skills/Collection")]
 public class ConfigSkills : ScriptableObject

@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Foyer.Network.WebSocket.Stomp
+﻿namespace Foyer.Network.WebSocket.Stomp
 {
     public static class StompCommand
     {

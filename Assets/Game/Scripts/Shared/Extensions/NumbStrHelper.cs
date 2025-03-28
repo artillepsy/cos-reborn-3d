@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Game.Scripts.Shared.Extensions
+namespace Shared.Extensions
 {
 public static class NumbStrHelper
 {

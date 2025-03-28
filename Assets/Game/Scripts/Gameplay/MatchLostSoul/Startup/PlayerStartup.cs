@@ -1,7 +1,7 @@
-using Game.Scripts.Gameplay.Shared.Init;
+using Gameplay.Shared.Init;
 using Unity.Netcode;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Startup
+namespace Gameplay.MatchLostSoul.Startup
 {
 public class PlayerStartup : NetworkBehaviour
 {

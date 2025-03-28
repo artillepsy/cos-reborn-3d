@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Scripts.Shared.AppStartup.CommandLine
+namespace Shared.AppStartup.CommandLine
 {
     public class ArgsS
     {

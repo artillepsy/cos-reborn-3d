@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Game.Scripts.Foyer.Network.WebSocket
+namespace Foyer.Network.WebSocket
 {
     public class WebSocketException : Exception
     {

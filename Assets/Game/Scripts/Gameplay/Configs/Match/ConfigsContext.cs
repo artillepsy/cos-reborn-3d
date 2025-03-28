@@ -1,7 +1,7 @@
-using Game.Scripts.Gameplay.Configs.Match.Skills;
+using Gameplay.Configs.Match.Skills;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Configs.Match
+namespace Gameplay.Configs.Match
 {
 /// <summary> Contains all the configs. </summary>
 [CreateAssetMenu(menuName = "Configs/Context")]

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Game.Scripts.Foyer.Network.WebSocket.Stomp
+namespace Foyer.Network.WebSocket.Stomp
 {
     public class StompMessage
     {

@@ -1,12 +1,11 @@
-using System;
-using Game.Scripts.Gameplay.Configs.Match;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
-using Game.Scripts.Gameplay.Shared.Init;
+using Gameplay.Configs.Match;
+using Gameplay.MatchLostSoul.Context;
+using Gameplay.Shared.Init;
 using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Movement
+namespace Gameplay.Shared.Movement
 {
 public class PlayerMovement : NetworkBehaviour, IMatchInitServer, IMatchInitClient
 {

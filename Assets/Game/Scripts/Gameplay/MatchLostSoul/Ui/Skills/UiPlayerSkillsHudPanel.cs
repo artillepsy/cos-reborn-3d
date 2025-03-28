@@ -1,15 +1,18 @@
 using System.Collections.Generic;
 using System.Linq;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
-using Game.Scripts.Gameplay.MatchLostSoul.Ui.Shared;
-using Game.Scripts.Gameplay.Shared.Skills;
-using Game.Scripts.Shared.Extensions;
+using Gameplay.MatchLostSoul.Context;
+using Gameplay.MatchLostSoul.Ui.Shared;
+using Gameplay.Shared.Skills;
+using Shared.Extensions;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Ui.Skills
+namespace Gameplay.MatchLostSoul.Ui.Skills
 {
-public class UiPlayerSkillsHudPanel : UiComponentBaseC
+/// <summary>
+/// The panel at the corner of the screen which displays current skill information (cooldown yet)
+/// </summary>
+public class UiPlayerSkillsHudPanel : UiInitCompBaseC
 {
 	[SerializeField]
 	private List<UiPlayerSkillHudItem> _items;

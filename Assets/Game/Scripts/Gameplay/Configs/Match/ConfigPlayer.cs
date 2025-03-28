@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Configs.Match
+namespace Gameplay.Configs.Match
 {
 /// <summary> Contains player base info. </summary>
 [CreateAssetMenu(menuName = "Configs/Player")]

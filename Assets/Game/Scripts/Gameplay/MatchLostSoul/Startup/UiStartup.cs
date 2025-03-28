@@ -1,9 +1,9 @@
 using System.Linq;
-using Game.Scripts.Gameplay.MatchLostSoul.Ui.Shared;
+using Gameplay.MatchLostSoul.Ui.Shared;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Startup
+namespace Gameplay.MatchLostSoul.Startup
 {
 public class UiStartup : NetworkBehaviour
 {
@@ -30,7 +30,7 @@ public class UiStartup : NetworkBehaviour
 	{
 		var context = FindFirstObjectByType<MatchStartup>().Context;
 		
-		FindObjectsByType<UiComponentBaseC>(FindObjectsInactive.Include, FindObjectsSortMode.None)
+		FindObjectsByType<UiInitCompBaseC>(FindObjectsInactive.Include, FindObjectsSortMode.None)
 		   .ToList().ForEach(comp => comp.InitClient(context));
 	}
 }

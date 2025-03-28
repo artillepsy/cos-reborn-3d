@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using Game.Scripts.Foyer.Network.Dto.Auth;
-using Game.Scripts.Foyer.Network.Http;
-using Game.Scripts.Foyer.Network.WebSocket;
+using Foyer.Network.Dto.Auth;
+using Foyer.Network.Http;
+using Foyer.Network.WebSocket;
 using Newtonsoft.Json;
 
-namespace Game.Scripts.Foyer.Network.Service.Auth
+namespace Foyer.Network.Service.Auth
 {
     public static class AuthService
     {

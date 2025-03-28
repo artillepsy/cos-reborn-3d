@@ -1,11 +1,11 @@
 using System;
-using Game.Scripts.Gameplay.Configs.Match.Skills;
-using Game.Scripts.Gameplay.Shared.Util;
-using Game.Scripts.Gameplay.Shared.Util.Camera;
-using Game.Scripts.Gameplay.Shared.Util.SerializableDataStructure;
+using Gameplay.Configs.Match.Skills;
+using Gameplay.Shared.Util;
+using Gameplay.Shared.Util.Camera;
+using Gameplay.Shared.Util.SerializableDataStructure;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Skills.Fireball
+namespace Gameplay.Shared.Skills.Fireball
 {
 /// <summary> Shoots a single projectile which flies in a straight direction </summary>
 public class SkillFireball : SkillBase

@@ -1,14 +1,13 @@
 using System;
 using System.Linq;
-using Game.Scripts.Gameplay.Configs.Match.Skills;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
-using Game.Scripts.Gameplay.Shared.Util;
-using Game.Scripts.Gameplay.Shared.Util.Camera;
-using Game.Scripts.Gameplay.Shared.Util.SerializableDataStructure;
-using Unity.Netcode;
+using Gameplay.Configs.Match.Skills;
+using Gameplay.MatchLostSoul.Context;
+using Gameplay.Shared.Util;
+using Gameplay.Shared.Util.Camera;
+using Gameplay.Shared.Util.SerializableDataStructure;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Skills.Teleport
+namespace Gameplay.Shared.Skills.Teleport
 {
 /// <summary> Teleports player to a desired location, restricted by colliders and max distance </summary>
 public class SkillTeleport : SkillBase

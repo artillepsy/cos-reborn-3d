@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Spawn
+namespace Gameplay.Shared.Spawn
 {
     /// <summary>
     /// Finds all the spawn points of the spawn object type <typeparamref name="T"/> on the scene.

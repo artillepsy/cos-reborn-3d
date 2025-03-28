@@ -1,10 +1,10 @@
 using System;
-using Game.Scripts.Gameplay.Shared.Skills.Flower;
+using Gameplay.Shared.Skills.Flower;
 using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Game.Scripts.Gameplay.Configs.Match.Skills
+namespace Gameplay.Configs.Match.Skills
 {
 [CreateAssetMenu(menuName = "Configs/Skills/Flower")]
 public class ConfigSkillFlower : ConfigSkill

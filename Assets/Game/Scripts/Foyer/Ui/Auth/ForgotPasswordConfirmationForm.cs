@@ -1,11 +1,11 @@
 ﻿using System;
-using Game.Scripts.Foyer.Network.Service.Auth;
-using Game.Scripts.Shared.Logging;
+using Foyer.Network.Service.Auth;
+using Shared.Logging;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Scripts.Foyer.Ui.Auth
+namespace Foyer.Ui.Auth
 {
     public class ForgotPasswordConfirmationForm : Form
     {

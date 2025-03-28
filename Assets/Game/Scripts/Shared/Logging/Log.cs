@@ -1,8 +1,8 @@
 using System;
-using Game.Scripts.Shared.Ui.Forms;
+using Shared.Ui.Forms;
 using UnityEngine;
 
-namespace Game.Scripts.Shared.Logging
+namespace Shared.Logging
 {
 /// <summary> Responsible for sending logs to in-game UI. </summary>
 public static class Log

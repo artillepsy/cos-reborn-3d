@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Spawn
+namespace Gameplay.Shared.Spawn
 {
     /// <summary>Resolves random spawn point of spawn object type <typeparamref name="T"/>.</summary>
     /// <typeparam name="T">Subtype of <see cref="SpawnableObject"/> class.</typeparam>

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Configs.Match.Skills
+namespace Gameplay.Configs.Match.Skills
 {
 /// <summary> Base skill config. Used by the server (?) </summary>
 public abstract class ConfigSkill : ScriptableObject

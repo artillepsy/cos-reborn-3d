@@ -1,10 +1,10 @@
 using System;
-using Game.Scripts.Gameplay.Shared.Skills.Wave;
+using Gameplay.Shared.Skills.Wave;
 using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Game.Scripts.Gameplay.Configs.Match.Skills
+namespace Gameplay.Configs.Match.Skills
 {
 [CreateAssetMenu(menuName = "Configs/Skills/Wave")]
 public class ConfigSkillWave : ConfigSkill

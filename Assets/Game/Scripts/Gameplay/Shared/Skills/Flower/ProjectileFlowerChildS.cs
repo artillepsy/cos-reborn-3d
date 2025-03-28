@@ -1,7 +1,7 @@
-using Game.Scripts.Gameplay.Configs.Match.Skills;
+using Gameplay.Configs.Match.Skills;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Skills.Flower
+namespace Gameplay.Shared.Skills.Flower
 {
 public class ProjectileFlowerChildS : ProjectileBaseS
 {

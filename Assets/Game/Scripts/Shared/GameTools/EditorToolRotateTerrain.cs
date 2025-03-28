@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Game.Scripts.Shared.GameTools
+namespace Shared.GameTools
 {
 public class EditorToolRotateTerrain : MonoBehaviour
 {

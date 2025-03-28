@@ -1,16 +1,15 @@
-using System;
 using System.Collections.Generic;
-using Game.Scripts.Gameplay.Configs.Match;
-using Game.Scripts.Gameplay.Configs.Match.Skills;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
-using Game.Scripts.Gameplay.MatchLostSoul.Player;
-using Game.Scripts.Gameplay.MatchLostSoul.Spawn.LostSoul;
-using Game.Scripts.Gameplay.MatchLostSoul.Spawn.LostSoulAbsorber;
-using Game.Scripts.Gameplay.Shared.Spawn.Player;
+using Gameplay.Configs.Match;
+using Gameplay.Configs.Match.Skills;
+using Gameplay.MatchLostSoul.Context;
+using Gameplay.MatchLostSoul.Player;
+using Gameplay.MatchLostSoul.Spawn.LostSoul;
+using Gameplay.MatchLostSoul.Spawn.LostSoulAbsorber;
+using Gameplay.Shared.Spawn.Player;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Startup
+namespace Gameplay.MatchLostSoul.Startup
 {
 public class MatchStartup : NetworkBehaviour
 {

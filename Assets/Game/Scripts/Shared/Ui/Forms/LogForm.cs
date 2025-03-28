@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Game.Scripts.Shared.Extensions;
+using Shared.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
 
-namespace Game.Scripts.Shared.Ui.Forms
+namespace Shared.Ui.Forms
 {
 //todo: add sort by inf/err etc
 /// <summary> In-game logs UI. Displays logs in builds </summary>

@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Game.Scripts.Foyer.Network.Dto.Lobby;
-using Game.Scripts.Foyer.Network.Dto.Lobby.Launch;
-using Game.Scripts.Foyer.Network.Http;
-using Game.Scripts.Foyer.Network.WebSocket;
-using Game.Scripts.Foyer.Network.WebSocket.Stomp;
-using Game.Scripts.Gameplay.Shared.Util;
+using Foyer.Network.Dto.Lobby;
+using Foyer.Network.Dto.Lobby.Launch;
+using Foyer.Network.Http;
+using Foyer.Network.WebSocket;
+using Foyer.Network.WebSocket.Stomp;
 using Newtonsoft.Json;
 
-namespace Game.Scripts.Foyer.Network.Service.Lobby
+namespace Foyer.Network.Service.Lobby
 {
     public static class LobbyLaunchService
     {

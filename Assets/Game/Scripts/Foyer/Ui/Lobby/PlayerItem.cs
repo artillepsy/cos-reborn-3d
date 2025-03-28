@@ -1,11 +1,11 @@
-﻿using Game.Scripts.Foyer.Network.Dto.Lobby;
-using Game.Scripts.Foyer.Network.Service.Lobby;
+﻿using Foyer.Network.Dto.Lobby;
+using Foyer.Network.Service.Lobby;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using Button = UnityEngine.UI.Button;
 
-namespace Game.Scripts.Foyer.Ui.Lobby
+namespace Foyer.Ui.Lobby
 {
     public class PlayerItem : MonoBehaviour
     {

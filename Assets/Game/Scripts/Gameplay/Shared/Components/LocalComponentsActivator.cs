@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Components
+namespace Gameplay.Shared.Components
 {
 public class LocalComponentsActivator : MonoBehaviour
 {

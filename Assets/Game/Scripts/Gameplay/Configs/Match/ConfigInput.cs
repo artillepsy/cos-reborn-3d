@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Configs.Match
+namespace Gameplay.Configs.Match
 {
 /// <summary> Contains default input bindings </summary>
 [CreateAssetMenu(menuName = "Configs/Input")]

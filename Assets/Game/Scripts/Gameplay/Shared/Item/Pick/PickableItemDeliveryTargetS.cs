@@ -2,7 +2,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Item.Pick
+namespace Gameplay.Shared.Item.Pick
 {
     public abstract class PickableItemDeliveryTargetS<T> : NetworkBehaviour where T : PickableItem
     {

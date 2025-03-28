@@ -1,7 +1,6 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace Game.Scripts.Foyer.Ui
+namespace Foyer.Ui
 {
     public abstract class Form : MonoBehaviour
     {

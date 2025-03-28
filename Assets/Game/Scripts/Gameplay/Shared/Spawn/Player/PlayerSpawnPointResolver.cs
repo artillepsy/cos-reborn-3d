@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Gameplay.Shared.Spawn.Player
+﻿namespace Gameplay.Shared.Spawn.Player
 {
     public class PlayerSpawnPointResolver : RandomSpawnPointResolver<PlayerSpawnableObject>
     {

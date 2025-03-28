@@ -1,9 +1,9 @@
-﻿using Game.Scripts.Shared.AppStartup.CommandLine;
+﻿using Shared.AppStartup.CommandLine;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Network
+namespace Gameplay.Shared.Network
 {
     public static class Topology
     {

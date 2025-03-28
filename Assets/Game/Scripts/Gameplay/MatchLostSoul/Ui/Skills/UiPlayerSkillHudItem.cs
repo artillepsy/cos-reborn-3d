@@ -1,8 +1,8 @@
-using Game.Scripts.Shared.Extensions;
+using Shared.Extensions;
 using TMPro;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Ui.Skills
+namespace Gameplay.MatchLostSoul.Ui.Skills
 {
 public class UiPlayerSkillHudItem : MonoBehaviour
 {

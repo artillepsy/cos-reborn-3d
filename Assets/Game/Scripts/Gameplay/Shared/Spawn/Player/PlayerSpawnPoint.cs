@@ -2,7 +2,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Spawn.Player
+namespace Gameplay.Shared.Spawn.Player
 {
     public class PlayerSpawnPoint : SpawnPoint<PlayerSpawnableObject>
     {

@@ -1,13 +1,13 @@
 using System;
 using System.Collections.Generic;
-using Game.Scripts.Gameplay.Configs.Match;
-using Game.Scripts.Gameplay.Configs.Match.Skills;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
-using Game.Scripts.Gameplay.Shared.Init;
+using Gameplay.Configs.Match;
+using Gameplay.Configs.Match.Skills;
+using Gameplay.MatchLostSoul.Context;
+using Gameplay.Shared.Init;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Skills
+namespace Gameplay.Shared.Skills
 {
 /// <summary> Responsible for skills. Attach to the player gameObject </summary>
 public class PlayerSkillsManager : NetworkBehaviour, IMatchInitServer, IMatchInitClient

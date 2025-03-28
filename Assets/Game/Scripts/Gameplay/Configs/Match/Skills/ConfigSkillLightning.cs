@@ -1,10 +1,10 @@
 using System;
-using Game.Scripts.Gameplay.Shared.Skills.Lightning;
+using Gameplay.Shared.Skills.Lightning;
 using Unity.Netcode;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Game.Scripts.Gameplay.Configs.Match.Skills
+namespace Gameplay.Configs.Match.Skills
 {
 [CreateAssetMenu(menuName = "Configs/Skills/Lightning")]
 public class ConfigSkillLightning : ConfigSkill

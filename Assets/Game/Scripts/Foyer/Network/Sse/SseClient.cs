@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using Game.Scripts.Foyer.Network.Http;
-using Game.Scripts.Gameplay.Shared.Util;
+using Foyer.Network.Http;
 using UnityEngine;
 
-namespace Game.Scripts.Foyer.Network.Sse
+namespace Foyer.Network.Sse
 {
     public class SseClient
     {

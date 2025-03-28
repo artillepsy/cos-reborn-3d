@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Foyer.Network.Dto.Lobby.Launch
+﻿namespace Foyer.Network.Dto.Lobby.Launch
 {
     public class ServerLaunchSuccessDto
     {

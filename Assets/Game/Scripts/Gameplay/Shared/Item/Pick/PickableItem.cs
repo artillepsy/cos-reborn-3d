@@ -1,6 +1,6 @@
 ﻿using Unity.Netcode;
 
-namespace Game.Scripts.Gameplay.Shared.Item.Pick
+namespace Gameplay.Shared.Item.Pick
 {
     /// <summary> Base abstract class for items, that can be picked by <see cref="ItemPickerS{T}"/>.</summary>
     public abstract class PickableItem : NetworkBehaviour

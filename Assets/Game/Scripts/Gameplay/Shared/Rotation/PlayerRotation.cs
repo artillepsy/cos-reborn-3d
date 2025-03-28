@@ -1,9 +1,8 @@
-using System;
-using Game.Scripts.Gameplay.Shared.Util.Camera;
+using Gameplay.Shared.Util.Camera;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Rotation
+namespace Gameplay.Shared.Rotation
 {
 public class PlayerRotation : NetworkBehaviour
 {

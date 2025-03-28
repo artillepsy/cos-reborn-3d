@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Configs.Match
+namespace Gameplay.Configs.Match
 {
 [CreateAssetMenu(menuName = "Configs/Match Profile")]
 public class ConfigMatchProfile : ScriptableObject

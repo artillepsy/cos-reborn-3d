@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Game.Scripts.Gameplay.Configs.Match;
+using Gameplay.Configs.Match;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Context
+namespace Gameplay.MatchLostSoul.Context
 {
 /// <summary> Contains all init data. May be divided into client and server contexts in the future </summary>
 public class MatchContext

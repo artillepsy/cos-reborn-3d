@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using JetBrains.Annotations;
 
-namespace Game.Scripts.Foyer.Network.Http
+namespace Foyer.Network.Http
 {
     public class RequestException : Exception
     {

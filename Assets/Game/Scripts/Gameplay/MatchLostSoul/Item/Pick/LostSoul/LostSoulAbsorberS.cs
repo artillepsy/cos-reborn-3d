@@ -1,6 +1,6 @@
-﻿using Game.Scripts.Gameplay.Shared.Item.Pick;
+﻿using Gameplay.Shared.Item.Pick;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Item.Pick.LostSoul
+namespace Gameplay.MatchLostSoul.Item.Pick.LostSoul
 {
     public class LostSoulAbsorberS : PickableItemAbsorberS<LostSoulPickableItem>
     {

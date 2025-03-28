@@ -1,9 +1,9 @@
-﻿using Game.Scripts.Foyer.Network.Dto.Lobby;
+﻿using Foyer.Network.Dto.Lobby;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.Scripts.Foyer.Ui.Lobby
+namespace Foyer.Ui.Lobby
 {
     public class LobbyItem : MonoBehaviour
     {

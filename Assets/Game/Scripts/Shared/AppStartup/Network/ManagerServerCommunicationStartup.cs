@@ -1,14 +1,14 @@
 ﻿using System;
-using Game.Scripts.Foyer.Network.Dto.Lobby.Launch;
-using Game.Scripts.Foyer.Network.Service.Lobby;
-using Game.Scripts.Gameplay.Shared.Network;
-using Game.Scripts.Shared.AppStartup.CommandLine;
-using Game.Scripts.Shared.Logging;
+using Foyer.Network.Dto.Lobby.Launch;
+using Foyer.Network.Service.Lobby;
+using Gameplay.Shared.Network;
+using Shared.AppStartup.CommandLine;
+using Shared.Logging;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Game.Scripts.Shared.AppStartup.Network
+namespace Shared.AppStartup.Network
 {
     public class ManagerServerCommunicationStartup : MonoBehaviour
     {

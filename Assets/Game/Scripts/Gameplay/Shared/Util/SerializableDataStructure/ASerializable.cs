@@ -1,6 +1,6 @@
 using System;
 
-namespace Game.Scripts.Gameplay.Shared.Util.SerializableDataStructure
+namespace Gameplay.Shared.Util.SerializableDataStructure
 {
 [Serializable]
 public abstract class ASerializable<T>

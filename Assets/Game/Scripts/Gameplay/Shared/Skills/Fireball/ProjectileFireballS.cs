@@ -1,7 +1,7 @@
-using Game.Scripts.Gameplay.Configs.Match.Skills;
+using Gameplay.Configs.Match.Skills;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Skills.Fireball
+namespace Gameplay.Shared.Skills.Fireball
 {
 public class ProjectileFireballS : ProjectileBaseS
 {

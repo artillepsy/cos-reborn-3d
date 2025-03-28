@@ -1,9 +1,9 @@
 using System;
-using Game.Scripts.Gameplay.Shared.Skills.Fireball;
+using Gameplay.Shared.Skills.Fireball;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Configs.Match.Skills
+namespace Gameplay.Configs.Match.Skills
 {
 [CreateAssetMenu(menuName = "Configs/Skills/Fireball")]
 public class ConfigSkillFireball : ConfigSkill

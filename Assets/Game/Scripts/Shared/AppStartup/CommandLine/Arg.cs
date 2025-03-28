@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Shared.AppStartup.CommandLine
+﻿namespace Shared.AppStartup.CommandLine
 {
     public class Arg<T>
     {

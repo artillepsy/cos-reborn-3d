@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Gameplay.Shared.Item.Pick
+﻿namespace Gameplay.Shared.Item.Pick
 {
     /// <summary>
     /// An object of this class attempts to automatically transfer an item

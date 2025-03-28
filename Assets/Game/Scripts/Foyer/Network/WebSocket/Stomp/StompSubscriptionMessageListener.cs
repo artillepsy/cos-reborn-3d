@@ -1,7 +1,6 @@
 ﻿using System;
-using Game.Scripts.Gameplay.Shared.Util;
 
-namespace Game.Scripts.Foyer.Network.WebSocket.Stomp
+namespace Foyer.Network.WebSocket.Stomp
 {
     public class StompSubscriptionMessageListener
     {

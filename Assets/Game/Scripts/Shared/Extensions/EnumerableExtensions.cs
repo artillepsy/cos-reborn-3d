@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Game.Scripts.Shared.Extensions
+namespace Shared.Extensions
 {
 public static class EnumerableExtensions
 {

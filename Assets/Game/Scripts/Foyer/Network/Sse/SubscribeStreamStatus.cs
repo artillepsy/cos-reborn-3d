@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Foyer.Network.Sse
+﻿namespace Foyer.Network.Sse
 {
     public enum SubscribeStreamStatus
     {

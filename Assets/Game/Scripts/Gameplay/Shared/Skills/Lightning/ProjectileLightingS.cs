@@ -1,7 +1,7 @@
-using Game.Scripts.Gameplay.Configs.Match.Skills;
+using Gameplay.Configs.Match.Skills;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Skills.Lightning
+namespace Gameplay.Shared.Skills.Lightning
 {
 public class ProjectileLightingS : ProjectileBaseS
 {

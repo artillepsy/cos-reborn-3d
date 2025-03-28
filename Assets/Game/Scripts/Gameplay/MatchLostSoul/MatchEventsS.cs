@@ -1,6 +1,6 @@
 using System;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul
+namespace Gameplay.MatchLostSoul
 {
 /// <summary>
 /// Contains events related to the match. Should be used only on server side,

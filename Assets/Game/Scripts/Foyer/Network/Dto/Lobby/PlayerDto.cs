@@ -1,4 +1,4 @@
-﻿namespace Game.Scripts.Foyer.Network.Dto.Lobby
+﻿namespace Foyer.Network.Dto.Lobby
 {
     public class PlayerDto
     {

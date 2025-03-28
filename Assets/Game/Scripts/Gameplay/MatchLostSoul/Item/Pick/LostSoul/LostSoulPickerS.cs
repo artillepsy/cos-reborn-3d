@@ -1,8 +1,8 @@
-﻿using Game.Scripts.Gameplay.Shared.Item.Pick;
-using Game.Scripts.Shared.Logging;
+﻿using Gameplay.Shared.Item.Pick;
+using Shared.Logging;
 using Unity.Netcode;
 
-namespace Game.Scripts.Gameplay.MatchLostSoul.Item.Pick.LostSoul
+namespace Gameplay.MatchLostSoul.Item.Pick.LostSoul
 {
     /// <summary><see cref="ItemPickerS{T}"/> subclass that can pick <see cref="LostSoulPickableItem"/> items.</summary>
     public class LostSoulPickerS : ItemPickerS<LostSoulPickableItem>, IPickableItemCourier<LostSoulPickableItem>

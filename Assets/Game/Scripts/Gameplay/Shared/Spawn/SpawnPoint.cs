@@ -2,7 +2,7 @@
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Spawn
+namespace Gameplay.Shared.Spawn
 {
     /// <summary>
     /// Base class for spawn point. Spawn point is one of points where <typeparamref name="T"/>

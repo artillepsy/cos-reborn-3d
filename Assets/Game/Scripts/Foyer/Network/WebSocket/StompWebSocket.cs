@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-using Game.Scripts.Foyer.Network.Http;
-using Game.Scripts.Foyer.Network.WebSocket.Stomp;
-using Game.Scripts.Shared.Logging;
+using Foyer.Network.Http;
+using Foyer.Network.WebSocket.Stomp;
+using Shared.Logging;
 using UnityEngine;
 using WebSocketSharp;
 
-namespace Game.Scripts.Foyer.Network.WebSocket
+namespace Foyer.Network.WebSocket
 {
     public class StompWebSocket
     {

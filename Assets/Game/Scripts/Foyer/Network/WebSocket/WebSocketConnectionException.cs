@@ -1,5 +1,5 @@
 ﻿
-namespace Game.Scripts.Foyer.Network.WebSocket
+namespace Foyer.Network.WebSocket
 {
     public class WebSocketConnectionException : WebSocketException
     {

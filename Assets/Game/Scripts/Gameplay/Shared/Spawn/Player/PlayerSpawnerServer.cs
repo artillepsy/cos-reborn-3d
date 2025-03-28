@@ -1,13 +1,13 @@
 ﻿using System.Collections;
-using Game.Scripts.Gameplay.Configs.Match;
-using Game.Scripts.Gameplay.MatchLostSoul;
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
-using Game.Scripts.Gameplay.Shared.Components;
-using Game.Scripts.Gameplay.Shared.Init;
+using Gameplay.Configs.Match;
+using Gameplay.MatchLostSoul;
+using Gameplay.MatchLostSoul.Context;
+using Gameplay.Shared.Components;
+using Gameplay.Shared.Init;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace Game.Scripts.Gameplay.Shared.Spawn.Player
+namespace Gameplay.Shared.Spawn.Player
 {
     public class PlayerSpawnerServer : SpawnerServer<PlayerSpawnableObject>, IMatchInitServer
     {

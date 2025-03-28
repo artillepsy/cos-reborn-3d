@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game.Scripts.Foyer.Ui.Auth
+namespace Foyer.Ui.Auth
 {
     public class AuthenticationForm : Form
     {

@@ -2,7 +2,7 @@
 using System.IO;
 using System.Text;
 
-namespace Game.Scripts.Foyer.Network.WebSocket.Stomp
+namespace Foyer.Network.WebSocket.Stomp
 {
     public class StompMessageSerializer
     {

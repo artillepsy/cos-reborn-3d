@@ -1,6 +1,6 @@
-using Game.Scripts.Gameplay.MatchLostSoul.Context;
+using Gameplay.MatchLostSoul.Context;
 
-namespace Game.Scripts.Gameplay.Shared.Init
+namespace Gameplay.Shared.Init
 {
 public interface IMatchInitClient
 {
