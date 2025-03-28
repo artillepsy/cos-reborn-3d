@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using Gameplay.Configs.Match;
 using Gameplay.Configs.Match.Skills;
-using Gameplay.MatchLostSoul.Context;
+using Gameplay.Matches.LostSoul.Context;
 using Gameplay.Shared.Init;
 using Unity.Netcode;
 using UnityEngine;

@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 using Gameplay.Configs.Match.Skills;
-using Gameplay.MatchLostSoul.Context;
+using Gameplay.Matches.LostSoul.Context;
 using Gameplay.Shared.Util;
 using Gameplay.Shared.Util.Camera;
 using Gameplay.Shared.Util.SerializableDataStructure;

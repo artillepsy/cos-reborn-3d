@@ -1,5 +1,5 @@
 using Gameplay.Configs.Match.Skills;
-using Gameplay.MatchLostSoul.Context;
+using Gameplay.Matches.LostSoul.Context;
 using UnityEngine;
 
 namespace Gameplay.Shared.Skills

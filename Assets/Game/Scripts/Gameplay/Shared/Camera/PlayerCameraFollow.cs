@@ -1,5 +1,5 @@
 using Cinemachine;
-using Gameplay.MatchLostSoul.Context;
+using Gameplay.Matches.LostSoul.Context;
 using Gameplay.Shared.Init;
 using UnityEngine;
 

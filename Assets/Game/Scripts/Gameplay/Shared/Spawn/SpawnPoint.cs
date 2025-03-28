@@ -9,7 +9,7 @@ namespace Gameplay.Shared.Spawn
     /// <see cref="SpawnObject"/> can be spawned by spawner.
     /// </summary>
     /// <typeparam name="T">Type of <see cref="SpawnObject"/> that can be spawner in this spawn point.</typeparam>
-    /// <seealso cref="SpawnerServer{T}"/>.
+    /// <seealso cref="SpawnerS{T}"/>.
     public abstract class SpawnPoint<T> : MonoBehaviour where T : SpawnableObject
     {
         /// <summary>Spawns the spawn object.</summary>

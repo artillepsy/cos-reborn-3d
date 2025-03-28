@@ -1,4 +1,4 @@
-using Gameplay.MatchLostSoul;
+using Gameplay.Matches.LostSoul;
 using Gameplay.Shared.Components;
 using Unity.Netcode;
 using UnityEngine;

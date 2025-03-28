@@ -1,4 +1,4 @@
-using Gameplay.MatchLostSoul.Context;
+using Gameplay.Matches.LostSoul.Context;
 
 namespace Gameplay.Shared.Init
 {

@@ -1,5 +1,5 @@
 using Gameplay.Configs.Match;
-using Gameplay.MatchLostSoul.Context;
+using Gameplay.Matches.LostSoul.Context;
 using Gameplay.Shared.Init;
 using Unity.Netcode;
 using Unity.Netcode.Components;
