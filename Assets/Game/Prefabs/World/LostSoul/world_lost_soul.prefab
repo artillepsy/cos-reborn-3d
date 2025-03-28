@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2980324121264757546}
   - component: {fileID: 234852827648439234}
   m_Layer: 0
-  m_Name: lost_soul
+  m_Name: world_lost_soul
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

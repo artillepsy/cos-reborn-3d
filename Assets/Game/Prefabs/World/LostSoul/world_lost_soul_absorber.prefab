@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -397787643131852393}
   - component: {fileID: 1643957002063015590}
   m_Layer: 0
-  m_Name: lost_soul_absorber
+  m_Name: world_lost_soul_absorber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
