@@ -30,7 +30,7 @@ public class UiStartup : NetworkBehaviour
 	{
 		var context = FindFirstObjectByType<MatchStartup>().Context;
 		
-		FindObjectsByType<AUiInitCompBaseC>(FindObjectsInactive.Include, FindObjectsSortMode.None)
+		FindObjectsByType<UiRootCompBaseC>(FindObjectsInactive.Include, FindObjectsSortMode.None)
 		   .ToList().ForEach(comp => comp.InitClient(context));
 	}
 }

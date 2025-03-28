@@ -87,11 +87,11 @@ public class MatchStartup : NetworkBehaviour
 	//TODO: Get unlocked skills from database
 	private void SetupPlayersDataServer()
 	{
-		_context.PlayersData = new Dictionary<ulong, MatchPlayerData>();
+		_context.PlayersDataS = new Dictionary<ulong, MatchPlayerDataS>();
 		
 		foreach (var (clientId, netClient) in NetworkManager.ConnectedClients)
 		{
-			var data = new MatchPlayerData()
+			var data = new MatchPlayerDataS()
 			{
 				UnlockedSkillsCollections = new List<List<ConfigSkill>>(),
 			};
@@ -104,7 +104,7 @@ public class MatchStartup : NetworkBehaviour
 				data.UnlockedSkillsCollections.Add(list);
 			}
 
-			_context.PlayersData.Add(clientId, data);	
+			_context.PlayersDataS.Add(clientId, data);	
 		}
 	}
 

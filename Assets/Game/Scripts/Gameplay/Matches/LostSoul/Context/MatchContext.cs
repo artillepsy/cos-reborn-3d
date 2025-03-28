@@ -8,7 +8,10 @@ public class MatchContext
 {
 	public ConfigsContext Configs;
 	
-	/// <summary> Should be visible only for server </summary>
-	public Dictionary<ulong, MatchPlayerData> PlayersData;
+	/// <summary> Should be accessible only for server </summary>
+	public Dictionary<ulong, MatchPlayerDataS> PlayersDataS;
+	
+	/// <summary> Should be accessible only for client </summary>
+	public Dictionary<ulong, MatchPlayerDataC> PlayersDataC;
 }
 }

@@ -58,7 +58,7 @@ public class PlayersSkillsSetterS : NetworkBehaviour, IMatchInitServer
 		{
 			_playerIdToSkillsMap.Add(clientId, new List<ConfigSkill>());
 
-			var data = _context.PlayersData[clientId];
+			var data = _context.PlayersDataS[clientId];
 			
 			for (int i = 0; i < _context.Configs.MatchProfile.SkillsNumber; i++)
 			{
@@ -82,7 +82,7 @@ public class PlayersSkillsSetterS : NetworkBehaviour, IMatchInitServer
 		var manager = FindObjectsByType<PlayerSkillsManager>(FindObjectsInactive.Include, FindObjectsSortMode.None)
 		   .First(a => a.OwnerClientId == playerId);
 
-		var data = _context.PlayersData[playerId];
+		var data = _context.PlayersDataS[playerId];
 		
 		for (int i = 0; i < _context.Configs.MatchProfile.SkillsNumber; i++)
 		{

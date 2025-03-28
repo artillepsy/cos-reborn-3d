@@ -24,14 +24,14 @@ namespace Gameplay.Shared.Spawn.Player
             {
                 return;
             }
-            MatchEventsS.EvPlayerDied += RespawnPlayerServer;
+            MatchEventsS.EvPlayerDied += RespawnPlayer;
         }
 
         public override void Spawn()
         {
             foreach (var clientId in NetworkManager.ConnectedClients.Keys)
             {
-                _spawnObject.ClientId = clientId;
+                _spawnObject.ClientIdS = clientId;
                 _spawnPointResolver.ResolveSpawnPoint().SpawnObject(_spawnObject);
             }
         }
@@ -42,7 +42,7 @@ namespace Gameplay.Shared.Spawn.Player
             _matchProfile = context.Configs.MatchProfile;
         }
 
-        private void RespawnPlayerServer(ulong ownerClientId)
+        private void RespawnPlayer(ulong ownerClientId)
         {
             StartCoroutine(RespawnPlayerCoServer(ownerClientId));
         }
@@ -64,7 +64,7 @@ namespace Gameplay.Shared.Spawn.Player
 
         public override void OnNetworkDespawn()
         {
-            MatchEventsS.EvPlayerDied -= RespawnPlayerServer;
+            MatchEventsS.EvPlayerDied -= RespawnPlayer;
         }
 
         [Rpc(SendTo.NotServer)]

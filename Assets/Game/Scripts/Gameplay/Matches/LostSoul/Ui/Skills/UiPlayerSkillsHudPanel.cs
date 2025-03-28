@@ -12,7 +12,7 @@ namespace Gameplay.Matches.LostSoul.Ui.Skills
 /// <summary>
 /// The panel at the corner of the screen which displays current skill information (cooldown yet)
 /// </summary>
-public class UiPlayerSkillsHudPanel : AUiInitCompBaseC
+public class UiPlayerSkillsHudPanel : UiRootCompBaseC
 {
 	[SerializeField]
 	private List<UiPlayerSkillHudItem> _items;
