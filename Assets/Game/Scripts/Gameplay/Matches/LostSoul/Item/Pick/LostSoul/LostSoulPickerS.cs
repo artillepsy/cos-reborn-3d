@@ -22,7 +22,7 @@ namespace Gameplay.Matches.LostSoul.Item.Pick.LostSoul
             MatchEventsS.EvPlayerDied -= TryDrop;
         }
         
-        private void TryDrop(ulong playerId)
+        private void TryDrop(ulong playerId, ulong? _)
         {
             if (OwnerClientId == playerId)
             {

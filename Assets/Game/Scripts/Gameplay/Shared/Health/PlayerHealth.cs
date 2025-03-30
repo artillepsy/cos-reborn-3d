@@ -31,10 +31,10 @@ public class PlayerHealth : NetworkBehaviour
 		}
 	}
 
-	public void KillServer()
+	public void KillServer(ulong killerId)
 	{
 		_componentsActivator.SetActive(false);
-		MatchEventsS.SendEvPlayerDied(OwnerClientId);
+		MatchEventsS.SendEvPlayerDied(OwnerClientId, killerId);
 		
 		KillPlayerClientRpc(OwnerClientId);
 	}
@@ -53,7 +53,7 @@ public class PlayerHealth : NetworkBehaviour
 	{
 		if (OwnerClientId == playerId)
 		{
-			KillServer();
+			KillServer(playerId);
 		}
 	}
 }

@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.rosdvp.blaheditor": {
+      "version": "https://github.com/rosdvp/BlahEditor.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "fef237fb9b5497e0c5858ec7f265c493c5f4b8bd"
+    },
     "com.unity.2d.sprite": {
       "version": "1.0.0",
       "depth": 0,

@@ -2,7 +2,7 @@ namespace Gameplay.Matches.LostSoul.Context
 {
 public class MatchPlayerDataC
 {
-	public ulong  ClientId;
+	public ulong  PlayerId;
 	public string Nickname;
 }
 }

@@ -28,10 +28,11 @@ public class UiStartup : NetworkBehaviour
 	[Rpc(SendTo.NotServer)]
 	private void InitClientRpc()
 	{
-		var context = FindFirstObjectByType<MatchStartup>().Context;
+		var   context       = FindFirstObjectByType<MatchStartup>().Context;
+		ulong localClientId = NetworkManager.Singleton.LocalClientId;
 		
-		FindObjectsByType<UiRootCompBaseC>(FindObjectsInactive.Include, FindObjectsSortMode.None)
-		   .ToList().ForEach(comp => comp.InitClient(context));
+		FindObjectsByType<UiCanvasBaseC>(FindObjectsInactive.Include, FindObjectsSortMode.None)
+		   .ToList().ForEach(comp => comp.InitClient(context, localClientId));
 	}
 }
 }

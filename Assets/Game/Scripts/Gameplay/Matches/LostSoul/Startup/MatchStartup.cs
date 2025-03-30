@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Gameplay.Configs.Match;
 using Gameplay.Configs.Match.Skills;
 using Gameplay.Matches.LostSoul.Context;
+using Gameplay.Matches.LostSoul.Score;
 using Gameplay.Matches.LostSoul.Skills;
 using Gameplay.Matches.LostSoul.Spawn.LostSoul;
 using Gameplay.Matches.LostSoul.Spawn.LostSoulAbsorber;
@@ -27,6 +28,12 @@ public class MatchStartup : NetworkBehaviour
 	[Header("Setters")]
 	[SerializeField]
 	private PlayersSkillsSetterS _playerSkillsSetterS;
+
+	[Header("Managers")]
+	[SerializeField]
+	private MatchScoreManager _matchScoreManager;
+
+	
 	//---------------------------------------------------------------------------------------
 	//---------------------------------------------------------------------------------------
 
@@ -75,12 +82,15 @@ public class MatchStartup : NetworkBehaviour
 		_playerSkillsSetterS.InitServer(_context);
 		_lostSoulSpawnerS.InitServer(_context);
 			
+		_matchScoreManager.InitServer(_context);
+		
 		_playerSpawnerS.Spawn();
 		_playerSkillsSetterS.SetupStartSkills();
 			
 		_lostSoulSpawnerS.Spawn();
 		_lostSoulAbsorberSpawnerS.Spawn();
 
+		StartMatchClientRpc();
 		MatchEventsS.SendEvMatchStarted();
 	}
  
@@ -89,7 +99,7 @@ public class MatchStartup : NetworkBehaviour
 	{
 		_context.PlayersDataS = new Dictionary<ulong, MatchPlayerDataS>();
 		
-		foreach (var (clientId, netClient) in NetworkManager.ConnectedClients)
+		foreach (var (clientId, _) in NetworkManager.ConnectedClients)
 		{
 			var data = new MatchPlayerDataS()
 			{
@@ -111,10 +121,29 @@ public class MatchStartup : NetworkBehaviour
 	[Rpc(SendTo.NotServer)]
 	private void SetupClientContextRpc()
 	{
-		_context = new MatchContext()
+		var playersData = new Dictionary<ulong, MatchPlayerDataC>();
+
+		foreach (var clientId in NetworkManager.ConnectedClients.Keys)
 		{
-			Configs = _configsContext,
+			playersData.Add(clientId, new MatchPlayerDataC()
+			{
+				Nickname = $"Player {clientId}",
+				PlayerId =  clientId,
+			});
+		}
+
+		_context = new MatchContext
+		{
+			Configs      = _configsContext,
+			PlayersDataC = playersData
 		};
+	}
+
+	[Rpc(SendTo.NotServer)]
+	private void StartMatchClientRpc()
+	{
+		_matchScoreManager.InitClient(_context);
+
 	}
 }
 }

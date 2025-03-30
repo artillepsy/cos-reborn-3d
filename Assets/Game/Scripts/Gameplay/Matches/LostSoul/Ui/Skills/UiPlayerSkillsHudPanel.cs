@@ -12,7 +12,7 @@ namespace Gameplay.Matches.LostSoul.Ui.Skills
 /// <summary>
 /// The panel at the corner of the screen which displays current skill information (cooldown yet)
 /// </summary>
-public class UiPlayerSkillsHudPanel : UiRootCompBaseC
+public class UiPlayerSkillsHudPanel : UiCanvasBaseC
 {
 	[SerializeField]
 	private List<UiPlayerSkillHudItem> _items;
@@ -22,10 +22,12 @@ public class UiPlayerSkillsHudPanel : UiRootCompBaseC
 	//---------------------------------------------------------------------------------------
 	private bool _isInitialized;
 
-	public override void InitClient(MatchContext context)
+	public override void InitClient(MatchContext context, ulong localPlayerId)
 	{
+		base.InitClient(context, localPlayerId);
+		
 		var managers = FindObjectsByType<PlayerSkillsManager>(FindObjectsInactive.Include, FindObjectsSortMode.None);
-		_skillsManager = managers.First(a => a.OwnerClientId == NetworkManager.Singleton.LocalClientId);
+		_skillsManager = managers.First(a => a.OwnerClientId == localPlayerId);
 
 		int maxSkills = context.Configs.MatchProfile.SkillsNumber;
 		for (int i = 0; i < _items.Count; i++)

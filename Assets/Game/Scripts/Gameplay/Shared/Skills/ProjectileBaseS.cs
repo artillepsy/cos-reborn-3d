@@ -57,7 +57,7 @@ public abstract class ProjectileBaseS : NetworkBehaviour
 				return;
 			}
 			Log.Inf(nameof(ProjectileBaseS), $"Hit player with id: {health.OwnerClientId}");
-			health.KillServer();
+			health.KillServer(ProjOwnerId.Value);
 			_netObj.Despawn();
 		}
 		else if (!other.isTrigger)

@@ -8,14 +8,14 @@ namespace Gameplay.Matches.LostSoul
 /// </summary>
 public static class MatchEventsS
 {
-	public static event Action<ulong> EvPlayerDied;
-	public static event Action<ulong> EvLostSoulAbsorbed;
-	public static event Action<ulong> EvPlayerSpawned;
-	public static event Action        EvMatchStarted;
+	public static event Action<ulong, ulong?> EvPlayerDied;
+	public static event Action<ulong>         EvLostSoulAbsorbed;
+	public static event Action<ulong>         EvPlayerSpawned;
+	public static event Action                EvMatchStarted;
 
-	public static void SendEvPlayerDied(ulong playerId)
+	public static void SendEvPlayerDied(ulong playerId, ulong? killerPlayerId)
 	{
-		EvPlayerDied?.Invoke(playerId);
+		EvPlayerDied?.Invoke(playerId, killerPlayerId);
 	}
 	
 	public static void SendEvPlayerSpawned(ulong playerId)

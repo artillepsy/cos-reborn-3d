@@ -27,6 +27,11 @@ namespace Gameplay.Shared.Spawn.Player
             MatchEventsS.EvPlayerDied += RespawnPlayer;
         }
 
+        public override void OnNetworkDespawn()
+        {
+            MatchEventsS.EvPlayerDied -= RespawnPlayer;
+        }
+
         public override void Spawn()
         {
             foreach (var clientId in NetworkManager.ConnectedClients.Keys)
@@ -42,29 +47,24 @@ namespace Gameplay.Shared.Spawn.Player
             _matchProfile = context.Configs.MatchProfile;
         }
 
-        private void RespawnPlayer(ulong ownerClientId)
+        private void RespawnPlayer(ulong playerId, ulong? _)
         {
-            StartCoroutine(RespawnPlayerCoServer(ownerClientId));
+            StartCoroutine(RespawnPlayerCoServer(playerId));
         }
 
-        private IEnumerator RespawnPlayerCoServer(ulong ownerClientId)
+        private IEnumerator RespawnPlayerCoServer(ulong playerId)
         {
             yield return new WaitForSeconds(_matchProfile.PlayerRespawnCooldown / 2);
             var spawnPoint = _spawnPointResolver.ResolveSpawnPoint();
-            var netPlayerObj = _netManager.ConnectedClients[ownerClientId].PlayerObject;
+            var netPlayerObj = _netManager.ConnectedClients[playerId].PlayerObject;
             netPlayerObj.transform.position = spawnPoint.transform.position;
 		
             yield return new WaitForSeconds(_matchProfile.PlayerRespawnCooldown / 2);
 		
             netPlayerObj.GetComponent<LocalComponentsActivator>().SetActive(true);
 		
-            MatchEventsS.SendEvPlayerSpawned(ownerClientId);
-            ActivatePlayerClientRpc(ownerClientId);
-        }
-
-        public override void OnNetworkDespawn()
-        {
-            MatchEventsS.EvPlayerDied -= RespawnPlayer;
+            MatchEventsS.SendEvPlayerSpawned(playerId);
+            ActivatePlayerClientRpc(playerId);
         }
 
         [Rpc(SendTo.NotServer)]

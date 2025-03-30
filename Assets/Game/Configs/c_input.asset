@@ -17,4 +17,5 @@ MonoBehaviour:
     MoveRight: 100
     MoveUp: 119
     MoveDown: 115
-    Skills: 430100004401000030010000
+    Skills: 430100004401000020000000
+    Scoreboard: 9

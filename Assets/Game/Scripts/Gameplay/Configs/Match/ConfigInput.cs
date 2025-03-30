@@ -21,6 +21,9 @@ public class ConfigInput : ScriptableObject
 
 		[Header("Skills")]
 		public List<KeyCode> Skills;
+
+		[Header("Ui")]
+		public KeyCode Scoreboard;
 	}
 }
 }
