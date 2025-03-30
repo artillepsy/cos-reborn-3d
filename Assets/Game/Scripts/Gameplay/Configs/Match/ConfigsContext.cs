@@ -11,5 +11,6 @@ public class ConfigsContext : ScriptableObject
 	public ConfigInput        Input;
 	public ConfigPlayer       Player;
 	public ConfigSkills       Skills;
+	public ConfigUx           Ux;
 }
 }

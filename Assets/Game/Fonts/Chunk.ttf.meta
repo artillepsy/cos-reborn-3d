@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fb155905d42382847aa970cf3b5afa87
+guid: 8ef542cbb9209814583800418b262983
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,10 +9,10 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Super Normal
+  - ChunkFive
   fallbackFontReferences: []
   customCharacters: 
-  fontRenderingMode: 0
+  fontRenderingMode: 3
   ascentCalculationMode: 1
   useLegacyBoundsCalculation: 0
   shouldRoundAdvanceValue: 1
