@@ -4,6 +4,7 @@ using Gameplay.Matches.LostSoul.Context;
 using Gameplay.Matches.LostSoul.Ui.Shared;
 using Gameplay.Shared.Skills;
 using Shared.Extensions;
+using Shared.Ui.Layouts;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ namespace Gameplay.Matches.LostSoul.Ui.Skills
 /// </summary>
 public class UiPlayerSkillsHudPanel : UiCanvasBaseC
 {
+	[SerializeField]
+	private UiHorizontalAligner _aligner;
 	[SerializeField]
 	private List<UiPlayerSkillHudItem> _items;
 
@@ -37,6 +40,7 @@ public class UiPlayerSkillsHudPanel : UiCanvasBaseC
 		}
 
 		_isInitialized = true;
+		_aligner.Align();
 	}
 	
 	//---------------------------------------------------------------------------------------
