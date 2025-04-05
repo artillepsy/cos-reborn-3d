@@ -52,11 +52,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _DistortionAmount: 0.2
-    - _Height: 2
+    - _Height: 1.5
     - _NoiseScale: 25
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Width: 0.05
+    - _Width: 0.03
     m_Colors:
     - _Color: {r: 0.6486768, g: 4.594794, b: 3.83139, a: 0.8705882}
     - _NoiseSpeed: {r: 0.8, g: 0.5, b: 0, a: 0}
