@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: c_skill_lightning
   m_EditorClassIdentifier: 
   Id: 1
-  IsInputHold: 0
   Cooldown: 1.86
   ProjectilePrefab: {fileID: 5263439505276341410, guid: 9369cb00f9c9b964580c93cf3a0b1d29, type: 3}
   SpeedForward: 15
   SpeedSide: 50
-  DirChangeTimeStartMin: 0.02
-  DirChangeTimeStartMax: 0.05
-  DirChangeTimeAddMin: 0.02
-  DirChangeTimeAddMax: 0.05
+  DirChangeTimeStartMin: 0.005
+  DirChangeTimeStartMax: 0.01
+  DirChangeTimeAddMin: 0.005
+  DirChangeTimeAddMax: 0.01
