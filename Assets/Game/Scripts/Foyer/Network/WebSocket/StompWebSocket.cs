@@ -164,11 +164,13 @@ namespace Foyer.Network.WebSocket
 
         private void HandleStompConnected(StompMessage connectedMessage)
         {
+            _errorState.IsError = false;
             ReleaseAndDisposeConnectSignal();
         }
 
         private void HandleStompMessage(StompMessage message)
         {
+            _errorState.IsError = false;
             _mainSynchronizationContext.Post(state =>
             {
                 OnStompMessage?.Invoke(message);

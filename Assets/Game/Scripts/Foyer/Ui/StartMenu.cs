@@ -16,6 +16,11 @@ namespace Foyer.Ui
 
         private void OnAuthenticationComplete()
         {
+            OpenLobbiesForm();
+        }
+
+        private void OpenLobbiesForm()
+        {
             _authenticationForm.gameObject.SetActive(false);
             _lobbiesForm.gameObject.SetActive(true);
         }

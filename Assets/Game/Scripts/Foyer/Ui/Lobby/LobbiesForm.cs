@@ -115,7 +115,7 @@ namespace Foyer.Ui.Lobby
 
         private static void InitLobbyItemGo(LobbyItem lobbyItem, LobbyDto lobbyDto, LobbiesForm lobbiesForm)
         {
-            lobbyItem.LobbyDto = lobbyDto;
+            lobbyItem.SetLobbyDto(lobbyDto);
             lobbyItem.FormLobbies = lobbiesForm;
         }
 

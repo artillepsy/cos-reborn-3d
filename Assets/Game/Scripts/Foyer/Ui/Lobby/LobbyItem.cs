@@ -1,4 +1,5 @@
 ﻿using Foyer.Network.Dto.Lobby;
+using Foyer.Network.Service.Lobby;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,8 @@ namespace Foyer.Ui.Lobby
         
         [SerializeField] private TextMeshProUGUI _lobbyNameText;
         [SerializeField] private Button _btnJoin;
+        [SerializeField] private TextMeshProUGUI _matchType;
+        [SerializeField] private TextMeshProUGUI _playersCount;
         private LobbiesForm _lobbiesForm;
 
         public LobbiesForm FormLobbies
@@ -22,14 +25,13 @@ namespace Foyer.Ui.Lobby
 
 
         private LobbyDto _lobbyDto;
-        public LobbyDto LobbyDto
+
+        public async void SetLobbyDto(LobbyDto lobbyDto)
         {
-            set
-            {
-                _lobbyDto = value;
-                _lobbyNameText.text = _lobbyDto.name;
-                _btnJoin.onClick.AddListener(OnJoinClicked);
-            }
+            _lobbyDto = lobbyDto;
+            _lobbyNameText.text = _lobbyDto.name;
+            _matchType.text = (await LobbyService.GetMatchTypes())[_lobbyDto.matchTypeIdx].name;
+            _btnJoin.onClick.AddListener(OnJoinClicked);
         }
 
         private void OnJoinClicked()

@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Foyer.Network.Dto.Lobby;
 using Foyer.Network.Http;
 using Foyer.Network.Sse;
+using Foyer.Network.WebSocket;
 using Foyer.Network.WebSocket.Stomp;
 using Newtonsoft.Json;
 
@@ -12,9 +13,11 @@ namespace Foyer.Network.Service.Lobby
     {
         private const string LobbyBaseUrl = "/lobby";
         private const string LobbyWebSocketBroadcastUrl = "/broadcast/lobby";
+        private static MatchTypeDto[] _matchTypes;
 
         public static async Task<LobbyDto> CreateLobby(LobbyDto lobbyDto)
         {
+            ValidateLobbyCreation(lobbyDto);
             var jsonLobbyDto = JsonConvert.SerializeObject(lobbyDto);
             var httpRequest = new HttpRequest($"{LobbyBaseUrl}", HttpMethod.Post, jsonLobbyDto);
             jsonLobbyDto = await httpRequest.SendWebRequestAsync();
@@ -70,7 +73,48 @@ namespace Foyer.Network.Service.Lobby
             var httpRequest = new HttpRequest(url, HttpMethod.Post);
             await httpRequest.SendWebRequestAsync();
         }
-        
+
+        public static async Task<MatchTypeDto[]> GetMatchTypes()
+        {
+            if (_matchTypes != null)
+            {
+                return _matchTypes;
+            }
+            var url = $"{LobbyBaseUrl}/match_types";
+            var httpRequest = new HttpRequest(url, HttpMethod.Get);
+            var matchTypesDtoJson = await httpRequest.SendWebRequestAsync();
+            _matchTypes = JsonConvert.DeserializeObject<MatchTypeDto[]>(matchTypesDtoJson);
+            return _matchTypes;
+        }
+
+        private static void ValidateLobbyCreation(LobbyDto lobbyDto)
+        {
+            if (string.IsNullOrWhiteSpace(lobbyDto.name))
+            {
+                throw new ArgumentException("The lobby must have a name");
+            }
+            if (lobbyDto.matchTypeIdx >= _matchTypes.Length || lobbyDto.matchTypeIdx < 0)
+            {
+                throw new ArgumentException("Invalid match type");
+            }
+            var currentMatchType = _matchTypes[lobbyDto.matchTypeIdx];
+            if (lobbyDto.minPlayers < currentMatchType.minPlayersAllowed)
+            {
+                throw new ArgumentException
+                (
+                    $"Players count cannot be less than {currentMatchType.minPlayersAllowed}"
+                );
+            }
+
+            if (lobbyDto.maxPlayers > currentMatchType.maxPlayersAllowed)
+            {
+                throw new ArgumentException
+                (
+                    $"Players count cannot be greater than {currentMatchType.maxPlayersAllowed}"
+                );
+            }
+        }
+
         public interface ILobbyStream
         {
             public void Open();
@@ -138,7 +182,7 @@ namespace Foyer.Network.Service.Lobby
 
             public WebSocketLobbyStream(string url)
             {
-                var webSocket = WebSocket.StompWebSocket.Instance;
+                var webSocket = StompWebSocket.Instance;
                 _stompMessageListener = new StompSubscriptionMessageListener(webSocket, url);
             }
 

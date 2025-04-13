@@ -21,6 +21,8 @@ MonoBehaviour:
   m_OverrideGlobalSceneList: 1
   m_Scenes:
   - m_enabled: 1
+    m_path: Assets/Game/Scenes/Client/StartClient.unity
+  - m_enabled: 1
     m_path: Assets/Game/Scenes/Game.unity
   m_ScriptingDefines: []
   m_PlayerSettingsYaml:

@@ -7,5 +7,6 @@
         public int minPlayers;
         public int maxPlayers;
         public string name;
+        public int matchTypeIdx;
     }
 }

@@ -2546,7 +2546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4703337446388574880, guid: f6ea6225535005d4b914978a04a785b5, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2889,6 +2889,8 @@ MonoBehaviour:
   _lightningCastTimeSecMax: 0.1
   _lightningIntensityMin: 0.1
   _lightningIntensityMax: 2
+  _lightningIntensityShadeMin: 0.5
+  _lightningIntensityShadeMax: 1
 --- !u!1001 &315702599
 PrefabInstance:
   m_ObjectHideFlags: 0
