@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using Gameplay.Configs.Match;
 using Gameplay.Configs.Match.Skills;
 using Gameplay.Matches.LostSoul.Context;
+using Gameplay.Matches.LostSoul.MatchEventsHints;
 using Gameplay.Matches.LostSoul.Score;
 using Gameplay.Matches.LostSoul.Skills;
 using Gameplay.Matches.LostSoul.Spawn.LostSoul;
@@ -32,7 +33,8 @@ public class MatchStartup : NetworkBehaviour
 	[Header("Managers")]
 	[SerializeField]
 	private MatchScoreManager _matchScoreManager;
-
+	[SerializeField]
+	private MatchScoreHintsManager _hintsManager;
 	
 	//---------------------------------------------------------------------------------------
 	//---------------------------------------------------------------------------------------
@@ -103,6 +105,7 @@ public class MatchStartup : NetworkBehaviour
 		{
 			var data = new MatchPlayerDataS()
 			{
+				Score = new PlayerScore(),
 				UnlockedSkillsCollections = new List<List<ConfigSkill>>(),
 			};
 
@@ -129,6 +132,7 @@ public class MatchStartup : NetworkBehaviour
 			{
 				Nickname = $"Player {clientId}",
 				PlayerId =  clientId,
+				Score = new PlayerScore()
 			});
 		}
 
@@ -143,7 +147,7 @@ public class MatchStartup : NetworkBehaviour
 	private void StartMatchClientRpc()
 	{
 		_matchScoreManager.InitClient(_context);
-
+		_hintsManager.InitClient(_context);
 	}
 }
 }

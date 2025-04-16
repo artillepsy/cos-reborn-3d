@@ -25,7 +25,7 @@ public class PlayerHealth : NetworkBehaviour
 
 	private void Update()
 	{
-		if (Input.GetKeyDown(KeyCode.K))
+		if (IsLocalPlayer && Input.GetKeyDown(KeyCode.K))
 		{
 			KillSelfServerRpc(OwnerClientId);
 		}

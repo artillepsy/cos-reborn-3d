@@ -1,4 +1,5 @@
 using System;
+using Gameplay.Matches.LostSoul.Score;
 
 namespace Gameplay.Matches.LostSoul
 {
@@ -8,10 +9,11 @@ namespace Gameplay.Matches.LostSoul
 /// </summary>
 public static class MatchEventsS
 {
-	public static event Action<ulong, ulong?> EvPlayerDied;
-	public static event Action<ulong>         EvLostSoulAbsorbed;
-	public static event Action<ulong>         EvPlayerSpawned;
-	public static event Action                EvMatchStarted;
+	public static event Action<ulong, ulong?>             EvPlayerDied;
+	public static event Action<ulong>                     EvLostSoulAbsorbed;
+	public static event Action<ulong>                     EvPlayerSpawned;
+	public static event Action                            EvMatchStarted;
+	public static event Action<ulong, EScoreType, ulong?> EvSoreUpdated;
 
 	public static void SendEvPlayerDied(ulong playerId, ulong? killerPlayerId)
 	{
@@ -30,6 +32,11 @@ public static class MatchEventsS
 	public static void SendEvMatchStarted()
 	{
 		EvMatchStarted?.Invoke();
+	}
+	
+	public static void SendEvScoreUpdated(ulong playerId, EScoreType type, ulong? otherPlayerId)
+	{
+		EvSoreUpdated?.Invoke(playerId, type, otherPlayerId);
 	}
 }
 }

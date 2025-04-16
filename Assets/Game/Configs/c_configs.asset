@@ -16,3 +16,4 @@ MonoBehaviour:
   Input: {fileID: 11400000, guid: 8056ceb643c87f243b801eab626f5dc8, type: 2}
   Player: {fileID: 11400000, guid: 1d871f25bf2056645afb4069c7a00104, type: 2}
   Skills: {fileID: 11400000, guid: 9d309865717d2064b970d89076be3f28, type: 2}
+  Ux: {fileID: 11400000, guid: 6a7ed99793be85a4bad5e416be95ef58, type: 2}

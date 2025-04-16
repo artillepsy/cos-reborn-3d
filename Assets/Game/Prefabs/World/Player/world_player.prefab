@@ -280,7 +280,6 @@ MonoBehaviour:
   - {fileID: 1064081863549271999}
   - {fileID: 7055197904795814178}
   - {fileID: 7638223674664191694}
-  - {fileID: 7638223674664191694}
 --- !u!1001 &2565058815811683948
 PrefabInstance:
   m_ObjectHideFlags: 0

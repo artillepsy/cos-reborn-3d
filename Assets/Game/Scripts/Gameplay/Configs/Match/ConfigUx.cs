@@ -1,3 +1,4 @@
+using System;
 using BlahEditor.Attributes;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class ConfigUx : ScriptableObject
 	[NoFoldout, Header("Hints")]
 	public ConfigUxHints Hints;
 	
+	[Serializable]
 	public class ConfigUxHints
 	{
 		public float Duration;
