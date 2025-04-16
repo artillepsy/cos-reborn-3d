@@ -1,27 +1,43 @@
-﻿using Gameplay.Shared.Item.Pick;
+﻿using Gameplay.Matches.LostSoul.Context;
+using Gameplay.Shared.Init;
+using Gameplay.Shared.Item.Pick;
 using Shared.Logging;
 using Unity.Netcode;
 
 namespace Gameplay.Matches.LostSoul.Item.Pick.LostSoul
 {
     /// <summary><see cref="ItemPickerS{T}"/> subclass that can pick <see cref="LostSoulPickableItem"/> items.</summary>
-    public class LostSoulPickerS : ItemPickerS<LostSoulPickableItem>, IPickableItemCourier<LostSoulPickableItem>
+    public class LostSoulPickerS : ItemPickerS<LostSoulPickableItem>, IPickableItemCourier<LostSoulPickableItem>, IMatchInitServer
     {
+        private MatchContext _context;
+        
         private readonly NetworkVariable<bool> _soulPicked = new NetworkVariable<bool>();
+
+        private bool IsPlayerAlive => _context.PlayersDataS[OwnerClientId].IsAlive;
 
         public override void OnNetworkSpawn()
         {
-            base.OnNetworkSpawn();
-            _soulPicked.OnValueChanged += OnSoulPickedDropped;
-            MatchEventsS.EvPlayerDied  += TryDrop;
+            if (IsServer)
+            {
+                _soulPicked.OnValueChanged += OnSoulPickedDropped;
+                MatchEventsS.EvPlayerDied  += TryDrop;    
+            }
         }
 
         public override void OnNetworkDespawn()
         {
-            base.OnNetworkDespawn();
-            MatchEventsS.EvPlayerDied -= TryDrop;
+            if (IsServer)
+            {
+                base.OnNetworkDespawn();
+                MatchEventsS.EvPlayerDied -= TryDrop;    
+            }
         }
-        
+
+        public void InitServer(MatchContext context)
+        {
+            _context = context;
+        }
+
         private void TryDrop(ulong playerId, ulong? _)
         {
             if (OwnerClientId == playerId)
@@ -32,6 +48,11 @@ namespace Gameplay.Matches.LostSoul.Item.Pick.LostSoul
 
         public override void Pick(LostSoulPickableItem pickableItem)
         {
+            if (!IsPlayerAlive)
+            {
+                return;
+            }
+            
             base.Pick(pickableItem);
             _soulPicked.Value = true;
         }
@@ -49,11 +70,11 @@ namespace Gameplay.Matches.LostSoul.Item.Pick.LostSoul
         {
             if (newVal)
             {
-                Log.Inf(nameof(LostSoulPickerS), "Lost soul picked");
+                Log.Inf(nameof(LostSoulPickerS), $"Lost soul picked, player: {OwnerClientId}");
             }
             else
             {
-                Log.Inf(nameof(LostSoulPickerS), "Lost soul dropped");
+                Log.Inf(nameof(LostSoulPickerS), $"Lost soul dropped, player: {OwnerClientId}");
             }
         }
 

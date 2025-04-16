@@ -1,4 +1,5 @@
-﻿using Unity.Netcode;
+﻿using System;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace Gameplay.Shared.Item.Pick
@@ -32,12 +33,20 @@ namespace Gameplay.Shared.Item.Pick
         /// <param name="pickableItem">Item to pick.</param>
         public virtual void Pick(T pickableItem)
         {
+            if (!IsServer)
+            {
+                throw new Exception("It's not server");
+            }
             pickableItem.GetComponent<NetworkObject>()?.Despawn();
         }
 
         /// <summary>Drops previously picked item if such exists.</summary>
         public virtual void Drop()
         {
+            if (!IsServer)
+            {
+                throw new Exception("It's not server");
+            }
             var inst = Instantiate(_itemPrefab, transform.position, Quaternion.identity);
             inst.GetComponent<NetworkObject>().Spawn();
         }

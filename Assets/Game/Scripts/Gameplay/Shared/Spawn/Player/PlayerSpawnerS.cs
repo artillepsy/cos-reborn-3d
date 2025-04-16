@@ -36,7 +36,8 @@ namespace Gameplay.Shared.Spawn.Player
         {
             foreach (var clientId in NetworkManager.ConnectedClients.Keys)
             {
-                _spawnObject.ClientIdS = clientId;
+                _spawnObject.ClientIdS                  = clientId;
+                _context.PlayersDataS[clientId].IsAlive = true;
                 _spawnPointResolver.ResolveSpawnPoint().SpawnObject(_spawnObject);
             }
         }
@@ -61,6 +62,8 @@ namespace Gameplay.Shared.Spawn.Player
 		
             yield return new WaitForSeconds(_matchProfile.PlayerRespawnCooldown / 2);
 		
+            _context.PlayersDataS[playerId].IsAlive = true;
+
             netPlayerObj.GetComponent<LocalComponentsActivator>().SetActive(true);
 		
             MatchEventsS.SendEvPlayerSpawned(playerId);

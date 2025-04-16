@@ -11,6 +11,7 @@ public class MatchPlayerDataS
 {
 	public ulong       ClientId;
 	public string      Nickname;
+	public bool        IsAlive;
 	public PlayerScore Score;
 	
 	public List<List<ConfigSkill>> UnlockedSkillsCollections;

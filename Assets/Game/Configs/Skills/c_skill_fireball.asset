@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: c_skill_fireball
   m_EditorClassIdentifier: 
   Id: 0
-  Cooldown: 1.98
+  Cooldown: 0.1
   ProjectilePrefab: {fileID: 5263439505276341410, guid: 7df1cf9c39b7a0e4882767d94819adbf, type: 3}
   Speed: 10
