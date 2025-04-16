@@ -17,7 +17,8 @@ public class MatchScoreHintsManager : NetworkBehaviour, IMatchInitServer, IMatch
 	//---------------------------------------------------------------------------------------
 	private Queue<(EScoreType type, ulong? otherPlayerId)> _hintsQueueC = new Queue<(EScoreType type, ulong? otherPlayerId)>();
 
-	private bool _isInitializedC;
+	private bool  _isInitializedC;
+	private ulong _localClientIdC;
 
 	public void InitServer(MatchContext context)
 	{
@@ -29,8 +30,7 @@ public class MatchScoreHintsManager : NetworkBehaviour, IMatchInitServer, IMatch
 		_context        = context;
 		_panelC         = FindAnyObjectByType<UiMatchEventsHintsPanel>(FindObjectsInactive.Include);
 		_isInitializedC = true;
-		Debug.Log($"Manager: initialized");
-
+		_localClientIdC = NetworkManager.Singleton.LocalClientId;
 	}
 	
 	//---------------------------------------------------------------------------------------
@@ -67,20 +67,22 @@ public class MatchScoreHintsManager : NetworkBehaviour, IMatchInitServer, IMatch
 	[Rpc(SendTo.NotServer)]
 	private void ProceedClientRpc(ulong playerId, EScoreType type, ulong otherPlayerId)
 	{
-		if (OwnerClientId != playerId)
+		if (_localClientIdC != playerId)
 		{
 			return;
 		}
+		
 		_hintsQueueC.Enqueue(new (type, otherPlayerId));
 	}
 	
 	[Rpc(SendTo.NotServer)]
 	private void ProceedClientRpc(ulong playerId, EScoreType type)
 	{
-		if (OwnerClientId != playerId)
+		if (_localClientIdC != playerId)
 		{
 			return;
 		}
+		
 		_hintsQueueC.Enqueue(new (type, null));
 	}
 
@@ -94,17 +96,17 @@ public class MatchScoreHintsManager : NetworkBehaviour, IMatchInitServer, IMatch
 		if (!_panelC.IsGoing && _hintsQueueC.Count > 0)
 		{
 			var hint = _hintsQueueC.Dequeue();
-
+			
 			switch (hint.type)
 			{
 				case EScoreType.Kills:
-					_panelC.LaunchKilledHint(_context.PlayersDataC[OwnerClientId].Score.Kills, hint.otherPlayerId.Value);
+					_panelC.LaunchKilledHint(_context.PlayersDataC[_localClientIdC].Score.Kills, hint.otherPlayerId.Value);
 					break;
 				case EScoreType.Deaths:
 					_panelC.LaunchDeadHint(hint.otherPlayerId);
 					break;
 				case EScoreType.Points:
-					_panelC.LaunchSoulAbsorbedHint(_context.PlayersDataC[OwnerClientId].Score.Kills);
+					_panelC.LaunchSoulAbsorbedHint(_context.PlayersDataC[_localClientIdC].Score.Kills);
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
