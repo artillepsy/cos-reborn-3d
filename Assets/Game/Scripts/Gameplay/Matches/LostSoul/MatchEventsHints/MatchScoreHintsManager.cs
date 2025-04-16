@@ -106,7 +106,7 @@ public class MatchScoreHintsManager : NetworkBehaviour, IMatchInitServer, IMatch
 					_panelC.LaunchDeadHint(hint.otherPlayerId);
 					break;
 				case EScoreType.Points:
-					_panelC.LaunchSoulAbsorbedHint(_context.PlayersDataC[_localClientIdC].Score.Kills);
+					_panelC.LaunchSoulAbsorbedHint(_context.PlayersDataC[_localClientIdC].Score.Points);
 					break;
 				default:
 					throw new ArgumentOutOfRangeException();
